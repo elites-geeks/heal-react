@@ -1,29 +1,23 @@
 import  Input  from '../InputName/Input'
-import DateOfBirth from '../DateOfBirth/DateOfBirth'
-import Email from '../Email/Email'
-import PhoneNum from '../PhoneNum/PhoneNum'
+
 import  InputPassWord  from '../InputPassword/Input'
-import UlpoadImage from '../UlpoadImage/UlpoadImage'
-import Gender from '../Gender/Gender'
-import Specality from '../Specality/Specality'
-import Location from '../Location/Location'
-import YearsOfExp from '../YearsOfExp/YearsOfExp'
+
 import  Button  from '../Buttonsignin/Button'
 
 function ClientSignUp() {
     return (
       <>
-      <Input/>
-      <DateOfBirth/>
-      <Email/>
-      <PhoneNum/>
+     <Input placeHolder={'User Name'}/>
+      <Input placeHolder={'DateOfBirth'}/>
+      <Input placeHolder={'Email'}/>
+      <Input placeHolder={'PhoneNum'}/>
       <InputPassWord/>
-      <UlpoadImage/>
-      <Gender/>
-      <Specality/>
-      <Location/>
-      <PhoneNum/>
-      <YearsOfExp/>
+      <Input placeHolder={'UlpoadImage'}/>
+      <Input placeHolder={'Gender'}/>
+      <Input placeHolder={'Specality'}/>
+      <Input placeHolder={'Location'}/>
+      <Input placeHolder={'ClinicPhoneNum'}/>
+      <Input placeHolder={'YearsOfExp'}/>
       <Button/>
       </>
       
