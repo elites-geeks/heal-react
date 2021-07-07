@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from './healLogo.jpg'
+import logo from './logo.jpg'
 function Logo() {
     return (
         <div className="logo">

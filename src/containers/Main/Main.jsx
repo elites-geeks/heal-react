@@ -4,9 +4,9 @@ import './Main.scss'
 // import Sign from '../../components/signin/Signin'
 // import SignUp from '../../components/SignUp/SignUp'
 
-import ClientSignUp from '../../components/ClientSignUp/ClientSignUp'
-import DoctorSignUp from '../../components/DoctorSignUp/DoctorSignUp'
-import EmployeeSignUP from '../../components/EmployeeSignUP/EmployeeSignUP'
+// import ClientSignUp from '../../components/ClientSignUp/ClientSignUp'
+// import DoctorSignUp from '../../components/DoctorSignUp/DoctorSignUp'
+// import EmployeeSignUP from '../../components/EmployeeSignUP/EmployeeSignUP'
 function Main() {
     return (
         <Switch>
@@ -14,10 +14,7 @@ function Main() {
             {/* <SignUp/> */}
             {/* <ClientSignUp/> */}
            {/* <DoctorSignUp/> */}
-           <EmployeeSignUP/>
-            <div>
-                Hello from main
-            </div>
+           {/* <EmployeeSignUP/> */}
         </Switch>
     )
 }
