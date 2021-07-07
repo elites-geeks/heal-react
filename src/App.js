@@ -1,14 +1,13 @@
 import Main from './containers/Main/Main';
 import Header from './containers/Header/Header'
 import Footer from './containers/Footer/Footer'
-import dashbored from './components/insuranc/dashbourd';
-
+import Routes from '../src/components/Route/Route'
 function App() {
   return (
     <>
         <Header />
+        <Routes/>
         <Main />
-        <dashbored/>
         <Footer />
     </>
     
