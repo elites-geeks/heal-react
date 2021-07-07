@@ -4,18 +4,21 @@ import './Main.scss'
 // import Sign from '../../components/signin/Signin'
 import SignUp from '../../components/SignUp/SignUp'
 
-// import ClientSignUp from '../../components/ClientSignUp/ClientSignUp'
-// import DoctorSignUp from '../../components/DoctorSignUp/DoctorSignUp'
-// import EmployeeSignUP from '../../components/EmployeeSignUP/EmployeeSignUP'
+import ClientSignUp from '../../components/ClientSignUp/ClientSignUp'
+import DoctorSignUp from '../../components/DoctorSignUp/DoctorSignUp'
+import EmployeeSignUP from '../../components/EmployeeSignUP/EmployeeSignUP'
+
+import DoctorProfile from '../../components/DoctorProfile/DoctorProfile'
+import ClientProfile from '../../components/ClientProfile/ClientProfile'
+// import Routes from '../../components/Route/Route'
 function Main() {
     return (
         <Switch>
-            {/* <Sign/> */}
-            <SignUp/>
-            {/* <ClientSignUp/> */}
-           {/* <DoctorSignUp/> */}
-           {/* <EmployeeSignUP/> */}
+           {/* <Routes/> */}
+           {/* <ClientProfile/> */}
+           <DoctorProfile/>
         </Switch>
+        
     )
 }
 

@@ -2,15 +2,15 @@ import  Input  from '../InputName/Input'
 import  InputPassWord  from '../InputPassword/Input'
 import  Button  from '../Buttonsignin/Button'
 
-function App() {
+function signin() {
     return (
       <>
-      <Input/>
+      <Input placeHolder={'User Name'}/>
       <InputPassWord/>
-      <Button/>
+      <Button placeHolder={'Submit'}/>
       </>
       
     );
   }
   
-  export default App;
+  export default signin;
