@@ -7,14 +7,14 @@ import  Button  from '../Buttonsignin/Button'
 function ClientSignUp() {
     return (
       <>
-       <Input placeHolder={'User Name'}/>
+      <Input placeHolder={'User Name'}/>
       <Input placeHolder={'DateOfBirth'}/>
       <Input placeHolder={'Email'}/>
       <Input placeHolder={'PhoneNum'}/>
       <InputPassWord/>
       <Input placeHolder={'UlpoadImage'}/>
       <Input placeHolder={'Gender'}/>
-      <Button/>
+      <Button placeHolder={'Submit'}/>
       </>
       
     );

@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, /*Route*/ } from 'react-router-dom'
 import './Main.scss'
 // import Sign from '../../components/signin/Signin'
-// import SignUp from '../../components/SignUp/SignUp'
+import SignUp from '../../components/SignUp/SignUp'
 
 import ClientSignUp from '../../components/ClientSignUp/ClientSignUp'
 import DoctorSignUp from '../../components/DoctorSignUp/DoctorSignUp'
@@ -11,10 +11,10 @@ function Main() {
     return (
         <Switch>
             {/* <Sign/> */}
-            {/* <SignUp/> */}
+            <SignUp/>
             {/* <ClientSignUp/> */}
            {/* <DoctorSignUp/> */}
-           <EmployeeSignUP/>
+           {/* <EmployeeSignUP/> */}
             <div>
                 Hello from main
             </div>
