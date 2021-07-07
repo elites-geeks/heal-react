@@ -1,0 +1,26 @@
+html,
+body,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "RubikMonoOne-Regular";
+    src: local("RubikMonoOne-Regular"),
+        url("./fonts/RubikMonoOne-Regular.ttf") format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "MontserratAlternates-Light";
+    src: local("MontserratAlternates-Light"),
+        url("./fonts/MontserratAlternates-Light.ttf") format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Engagement-Regular";
+    src: local("Engagement-Regular"),
+        url("./fonts/Engagement-Regular.ttf") format("truetype");
+    font-weight: bold;
+}
