@@ -17,7 +17,7 @@ function ClientSignUp() {
       <Input placeHolder={'Field'}/>
       <Input placeHolder={'YearsOfExp'}/>
       <Input placeHolder={'Employer'}/>
-      <Button/>
+      <Button placeHolder={'Submit'}/>
     
       </>
       
