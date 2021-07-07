@@ -18,10 +18,7 @@ function Main() {
         <Switch>
            {/* <Routes/> */}
            {/* <ClientProfile/> */}
-           <AddNewPolicy/>
-            <div>
-                Hello from main
-            </div>
+           <DoctorProfile/>
         </Switch>
         
     )

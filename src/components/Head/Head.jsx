@@ -9,6 +9,11 @@ function Head() {
             <h4>
                 THE ONES WHO CARE ABOUT YOUR <span>HEAL</span>-TH
             </h4>
+            <div className="head-btns">
+
+            <button>Learn More</button>
+            <button>JOIN US</button>
+            </div>
         </>
     )
 }
