@@ -8,7 +8,7 @@ import UserType from '../UserType/UserType'
 import ClientSignUp from '../ClientSignUp/ClientSignUp'
 import DoctorSignUp from '../DoctorSignUp/DoctorSignUp'
 import EmployeeSignUP from '../EmployeeSignUP/EmployeeSignUP'
-
+import './SignUp.scss'
 
 function SignUp() {
     const [flag,SetFlag]=useState()
@@ -16,7 +16,8 @@ function SignUp() {
     console.log(usertType);
     return (
     <>
-    <Card style={{ width: '24rem', height: 'fit-content' ,padding: '10px' }}>
+    <div id="signUpCard">
+    <Card  style={{ width: '24rem', height: 'fit-content' ,padding: '10px' }}>
     <Card.Body>
     <Card.Title>Sign Up</Card.Title>
     <UserType handleUserTypeChange={SetUSerType}/>
@@ -28,7 +29,7 @@ function SignUp() {
     </Switch>
     </Card.Body>
     </Card>
-    
+    </div>
    
     </>
     )

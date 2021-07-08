@@ -1,3 +1,29 @@
 #inputStyle{
-    border: 0
+    border: 0;
+    font: inherit;
+    outline: 0;
 }
+#form__field {
+  position: relative;
+}
+
+#form__field .icon {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%)
+}
+// #inputStyle {
+//     border-radius: 0.25em;
+//     border-style: solid;
+//     border-width: 2px;
+//     font-size: 1.5rem;
+//     padding: 0.5em 4em 0.5em 2em;
+//   }
+  
+  #inputStyle:valid + .icon::after {
+    content: '😃';
+  }
+  #inputStyle:invalid + .icon::after {
+    content: '😳';
+  }

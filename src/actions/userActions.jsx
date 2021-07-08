@@ -1,4 +1,5 @@
 const login = ()=>{
+    console.log('inside login')
     return({
         type:'LOGIN',
     })
