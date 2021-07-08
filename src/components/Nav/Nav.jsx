@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Nav() {
-    const pages = [{ name: "HOME", path: '/' }, { name: 'REGISTER', path: 'signup' },{ name: 'log in', path: 'signin' }]
+    const pages = [{ name: "HOME", path: '/' }, { name: 'REGISTER', path: 'register' },{ name: 'log in', path: 'login' }]
     return (
         <nav className="nav">
             <ul>
