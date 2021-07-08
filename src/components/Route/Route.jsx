@@ -6,6 +6,8 @@ import SubscribeToInsuranceCompany from '../SubscribeToInsuranceCompany/Subscrib
 import MakeDoctorVisit from '../MakeDoctorVisit/MakeDoctorVisit';
 import DoctorVisitReceiption from '../DoctorVisitReceiption/DoctorVisitReceiption';
 import Diagnosis from '../Diagnosis/Diagnosis' 
+import DoctorProcedure from '../DoctorProcedure/DoctorProcedure'
+import AccountantVisitReceiption from '../AccountantVisitReceiption/AccountantVisitReceiption'
 function ClientProfile() {
     return (
       <>
@@ -27,6 +29,12 @@ function ClientProfile() {
                    </Route>
                    <Route path="/Write/dignoses">
                        <Diagnosis/>
+                   </Route>
+                   <Route path="/add/procedure">
+                       <DoctorProcedure/>
+                   </Route>
+                   <Route path="/new/AccountantVisitReceiption">
+                       <AccountantVisitReceiption/>
                    </Route>
             </Switch>
       </>

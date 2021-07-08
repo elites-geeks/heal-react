@@ -8,7 +8,7 @@ function DoctorVisit(props) {
         <div>
           <Link to='/patient/history'><Button placeHolder={'View patient history'}/></Link>
           <Link to='/Write/dignoses'><Button placeHolder={'Write dignoses'}/></Link>
-         <Button placeHolder={'add procedure'}/>
+          <Link to='/add/procedure'><Button placeHolder={'add procedure'}/></Link>
        </div>
     )
 }
