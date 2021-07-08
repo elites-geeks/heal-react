@@ -1,8 +1,5 @@
-import { connect } from 'react-redux';
-import { Button} from '@material-ui/core';
-import{NavLink} from 'react-router-dom' ;
+import { Button} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { FormControl } from 'react-bootstrap';
 const addNewPolicy = (props) => {
   return (
     
