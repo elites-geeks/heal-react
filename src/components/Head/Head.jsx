@@ -7,7 +7,7 @@ function Head() {
         history.push("/register");
     }
     return (
-        <>
+        <div className="head">
             <h1 className="main-head">
                 <span>HEAL</span> MACROSYSTEMS
             </h1>
@@ -19,7 +19,7 @@ function Head() {
                 <button >Learn More</button>
                 <button onClick={handleClick}>JOIN US</button>
             </div>
-        </>
+        </div>
     )
 }
 
