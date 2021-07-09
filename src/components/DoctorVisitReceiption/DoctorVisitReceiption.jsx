@@ -1,12 +1,20 @@
 
-import Input from "../InputName/Input";
-import Button from '../Buttonsignin/Button'
+
+import {Button} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 function DoctorProfile() {
     return (
       <>
       <h1>New Visit Receiption</h1>
-      <Input placeHolder={'token number'}/>
-      <Button placeHolder={'submit'}/>
+      <Form>
+        <Form.Group controlId="formBasicToken">
+          <Form.Control type="number" placeholder="token number" />
+          </Form.Group>
+          
+          <Button variant="primary" type="submit">
+            Submit
+         </Button>
+      </Form>
       </>
       
     );

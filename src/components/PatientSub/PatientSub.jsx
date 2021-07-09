@@ -1,14 +1,14 @@
 import React from 'react'
 
 import {Link} from 'react-router-dom'
-import Button from '../Buttonsignin/Button' 
+import {Button} from 'react-bootstrap' 
 
 function DoctorVisit(props) {
     return (
         <div>
-          <Link to='/patient/history'><Button placeHolder={'View patient history'}/></Link>
-          <Link to='/Write/dignoses'><Button placeHolder={'Write dignoses'}/></Link>
-          <Link to='/add/procedure'><Button placeHolder={'add procedure'}/></Link>
+          <Link to='/patient/history'><Button >View patient history</Button></Link>
+          <Link to='/Write/dignoses'><Button >Write dignoses</Button></Link>
+          <Link to='/add/procedure'><Button >add procedure</Button></Link>
        </div>
     )
 }

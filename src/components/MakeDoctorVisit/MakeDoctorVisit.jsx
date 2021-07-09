@@ -1,15 +1,29 @@
 import React from 'react'
 
-import  Input  from '../InputName/Input'
-import Button from '../Buttonsignin/Button' 
+import {Form} from 'react-bootstrap'
+import {Button} from 'react-bootstrap' 
 
 function DoctorVisit(props) {
     return (
         <div>
-         <Input placeHolder={'Specality'}/>
-         <Input placeHolder={'Time'}/>
-         <Input placeHolder={'City'}/>
-         <Button placeHolder={'search'}/>
+            
+         <Form>
+        <Form.Group controlId="formBasiSpecality">
+          <Form.Control type="text" placeholder="Specality" />
+          </Form.Group>
+          
+          <Form.Group controlId="formBasicTime">
+          <Form.Control type="text" placeholder="Time" />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicCity">
+          <Form.Control type="text" placeholder="City" />
+          </Form.Group>
+
+          <Button variant="primary" type="submit">
+          search
+         </Button>
+      </Form>
        </div>
     )
 }

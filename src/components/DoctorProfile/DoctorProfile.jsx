@@ -1,5 +1,5 @@
 
-import  Button  from '../Buttonsignin/Button'
+import { Button } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
 
@@ -8,8 +8,8 @@ function DoctorProfile() {
     return (
       <>
       <h1>Doctor Profile</h1>
-      <Link to='/newVisitDoctor'><Button placeHolder={'new Visit'}  /></Link> 
-      <Link to=''><Button placeHolder={'Appointments'}/></Link> 
+      <Link to='/newVisitDoctor'><Button  >new Visit</Button></Link> 
+      <Link to=''><Button>Appointments</Button></Link> 
       </>
       
     );
