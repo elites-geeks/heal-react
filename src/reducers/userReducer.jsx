@@ -7,12 +7,10 @@ const userReducer = (state = user, action) => {
     const { payload, type } = action;
     switch (type) {
         case 'LOGIN':
-            console.log('login reducer')
-            return { ...state, isLoggedIn: !state.isLoggedIn }
+            return { ...state, isLoggedIn: true }
         case 'USER_TYPE':
             return {...state, userType:payload.userType}
         default:
-            console.log('state',state)
             return state;
     }
 }

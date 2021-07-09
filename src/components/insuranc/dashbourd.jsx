@@ -1,18 +1,20 @@
-
-import { NavLink } from 'react-router-dom';
-const dashbored = (props) => {
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap';
+const InsuranceDashboard = (props) => {
   return (
-
-    <div>
-      <h1>insuranc company dashbored </h1>
-      <NavLink exact to="/subRequest">New subsecribtion Request</NavLink><br />
-      <NavLink exact to="/pending-visit ">Pending Visits</NavLink><br />
-      <NavLink exact to="/addNewPolicy">Add New Policy</NavLink><br />
-
+    <div className="dashboard">
+      <h1>Insurance Rep </h1>
+      <Link to="/subRequests">
+        <Button>New subscription Request</Button><br />
+      </Link>
+      <Link to="/pendingVisits">
+        <Button>Pending Visits</Button><br />
+      </Link>
+      <Link to="/addNewPolicy">
+        <Button>Add New Policy</Button><br />
+      </Link>
     </div>
   );
 };
 
-
-
-export default dashbored;
+export default InsuranceDashboard;

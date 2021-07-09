@@ -1,18 +1,19 @@
 
-import  Button  from '../Buttonsignin/Button'
-import {Link} from 'react-router-dom'
-
-
+import Button from '../Buttonsignin/Button'
+import { Link} from 'react-router-dom'
 
 function DoctorProfile() {
-    return (
-      <>
+  return (
+    <div className="dashboard">
       <h1>Doctor Profile</h1>
-      <Link to='/newVisitDoctor'><Button placeHolder={'new Visit'}  /></Link> 
-      <Link to=''><Button placeHolder={'Appointments'}/></Link> 
-      </>
-      
-    );
-  }
-  
-  export default DoctorProfile;
+      <Link to={'/dashboard/doctor/newVisitDoctor'}>
+        <Button placeHolder={'Visit Reception'} />
+      </Link>
+      <Link to={'/dashboard/doctor/appointments'}>
+        <Button placeHolder={'Appointments'} />
+      </Link>
+    </div>
+  );
+}
+
+export default DoctorProfile;
