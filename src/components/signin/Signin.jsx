@@ -16,8 +16,7 @@ function SignIn() {
   const signInHandler = async (username,password) => {
     const loggedIn = await dispatch(loginServer(username, password))
     if(loggedIn?.payload?.username){
-      console.log(from.pathname)
-      history.replace(from);
+      history.replace({...from, pathname:from.pathname==="/"? `/dashboard/${loggedIn.payload.role}`:from.pathname});
     }else{
       console.log("error logged in")
     }

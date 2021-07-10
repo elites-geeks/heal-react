@@ -1,6 +1,6 @@
 import { signIn } from '../reducers/utils'
 
-const login =(payload)=>{
+export const login =(payload)=>{
     return{
         type:'LOGIN',
         payload
@@ -15,6 +15,11 @@ const loginServer =  (username, password) =>async (dispatch) => {
     }
 }
 
+export const logout = ()=>{
+    return {
+        type:'LOGOUT'
+    }
+}
 
 
 export {  loginServer };

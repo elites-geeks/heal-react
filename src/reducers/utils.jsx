@@ -17,7 +17,7 @@ export const signIn = async (username, password) => {
     }
   );
   if (user.data) {
-    cookie.save("auth-cookie", user.data.token);
+    cookie.save("auth-token", user.data.token);
     return jwt.decode(user.data.token);
   } else {
     return "Invalid user";
@@ -66,3 +66,18 @@ export const signUp = async (data,type) => {
     console.log(err.message)
   }
 };
+
+export const getCookie = ()=>{
+  const token = cookie.load('auth-token')
+  if(token){
+      const user = jwt.decode(token);
+      return user;     
+  }else{
+    return null;
+  }
+}
+
+
+export const signOut = ()=>{
+  cookie.remove('auth-token'); 
+}
