@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-function ClientSignUp({ handleChange }) {
+function DoctorSignUp({ handleChange }) {
   return (
     <>
       <Form.Group controlId="formBasicName">
@@ -82,4 +82,4 @@ function ClientSignUp({ handleChange }) {
   );
 }
 
-export default ClientSignUp;
+export default DoctorSignUp;

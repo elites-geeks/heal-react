@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-function ClientSignUp() {
+function EmployeeSignUP() {
   return (
     <>
       <Form>
@@ -99,4 +99,4 @@ function ClientSignUp() {
   );
 }
 
-export default ClientSignUp;
+export default EmployeeSignUP;
