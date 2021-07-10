@@ -21,7 +21,7 @@ import Head from '../../components/Head/Head'
 // import Routes from '../../components/Route/Route'
 function Main() {
     const isLoggedIn = useSelector(state => state.userReducer.isLoggedIn)
-    const userType = useSelector(state => state.userReducer.userType);
+    const userType = useSelector(state => state.userReducer.user.role);
     const history = useHistory()
     useEffect(() => {
         if (isLoggedIn) {

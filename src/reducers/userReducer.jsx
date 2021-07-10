@@ -1,15 +1,17 @@
-const user = {
+const auth = {
     isLoggedIn: false,
-    userType: ''
+    user: {}
 }
 
-const userReducer = (state = user, action) => {
+const userReducer = (state = auth, action) => {
     const { payload, type } = action;
     switch (type) {
         case 'LOGIN':
-            return { ...state, isLoggedIn: true }
-        case 'USER_TYPE':
-            return {...state, userType:payload.userType}
+            if(payload!=='Invalid user'){
+                return { user:{...payload}, isLoggedIn: true }
+            }else{
+                return state;
+            }
         default:
             return state;
     }
