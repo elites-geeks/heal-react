@@ -5,14 +5,14 @@ import DoctorVisitReceiption from '../../components/DoctorVisitReceiption/Doctor
 import Appointments from '../../components/Appointments/Appointments';
 function DoctorSwitch() {
     return (
-    <Switch>
-        <Route exact path={'/dashboard/doctor/newVisitDoctor'}>
-            <DoctorVisitReceiption />
+        <Switch>
+            <Route exact path={'/dashboard/doctor/newVisitDoctor'}>
+                <DoctorVisitReceiption />
             </Route>
             <Route exact path={'/dashboard/doctor/appointments'}>
-                <Appointments/>
-                </Route>
-                </Switch>
+                <Appointments />
+            </Route>
+        </Switch>
     )
 }
 
