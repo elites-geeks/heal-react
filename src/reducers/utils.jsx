@@ -17,6 +17,7 @@ export const signIn = async (username, password) => {
     }
   );
   if (user.data) {
+    console.log('user.data',user.data)
     cookie.save("auth-cookie", user.data.token);
     return jwt.decode(user.data.token);
   } else {
@@ -24,11 +25,11 @@ export const signIn = async (username, password) => {
   }
 };
 
-export const signUp = async (data,type) => {
+export const signUp = async (data) => {
   switch (data.type) {
     case 'client':
       data = { ...data, role: 'user', type: 'patient' }
-      break
+      break;
     case 'doctor':
       data = { ...data, role: 'user', type: 'doctor' }
       break;
@@ -44,13 +45,19 @@ export const signUp = async (data,type) => {
     case 'therapy':
       data = { ...data, role: 'user', type: 'therapy' }
       break;
+      case 'employee':
+      data = { ...data, role: 'user', type: 'employee' }
+      break;
     default:
       data = { ...data }
   }
   try {
+    console.log('data',data)
+    console.log(`/admin/${data.type}`)
+    console.log('data.type',data.type)
     const result = await axios({
       baseURL: baseURL,
-      url: "/admin/patient",
+      url: `/admin/${data.type}`,
       method: "post",
       data: JSON.stringify(data),
       headers: {
@@ -58,6 +65,7 @@ export const signUp = async (data,type) => {
         "Access-Control-Allow-Origin": baseURL,
       },
     });
+    console.log(result.data)
     if (result.data) {
       console.log(result.data);
       cookie.save("auth-token", result.data.token);
@@ -65,4 +73,9 @@ export const signUp = async (data,type) => {
   } catch (err) {
     console.log(err.message)
   }
+};
+
+
+export const getAppointment = async () => {
+ 
 };

@@ -1,9 +1,12 @@
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
+import {Card} from "react-bootstrap"
 function DoctorVisitReceiption() {
   return (
     <>
-      <h1>New Visit Receiption</h1>
+      <h1>New Visit Reception</h1>
+      <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
+          <Card.Body>
       <Form>
         <Form.Group controlId="formBasicToken">
           <Form.Control type="number" placeholder="token number" />
@@ -13,6 +16,8 @@ function DoctorVisitReceiption() {
           Submit
         </Button>
       </Form>
+      </Card.Body>
+      </Card>
     </>
   );
 }
