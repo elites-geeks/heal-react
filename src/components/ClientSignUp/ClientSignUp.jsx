@@ -6,7 +6,6 @@ import { Button } from "react-bootstrap";
 function ClientSignUp({ handleChange}) {
   return (
     <>
-
         <Form.Group>
           <Form.Control
             name="firstname"
