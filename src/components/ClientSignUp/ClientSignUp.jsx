@@ -15,7 +15,7 @@ function ClientSignUp() {
 
   return (
     <>
-      <Form onSubmit={() => signUp(formBody)}>
+      <Form onSubmit={(e)=>{e.preventDefault();signUp(formBody)} }>
         <Form.Group>
           <Form.Control
             name="username"

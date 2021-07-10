@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-function ClientProfile() {
+function Diagnosis() {
   return (
     <>
       <h1>Diagnosis </h1>
@@ -29,4 +29,4 @@ function ClientProfile() {
   );
 }
 
-export default ClientProfile;
+export default Diagnosis;
