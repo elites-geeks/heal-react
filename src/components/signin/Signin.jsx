@@ -1,36 +1,45 @@
-import {Form} from 'react-bootstrap'
-import {Button} from 'react-bootstrap'
+// import Input from '../InputName/Input'
+// import InputPassWord from '../InputPassword/Input'
 import Card from 'react-bootstrap/Card';
-import {useDispatch} from 'react-redux'
-import {login} from '../../actions/userActions'
+import { Form,Button, Col } from 'react-bootstrap';
+import { useDispatch } from 'react-redux'
+import {useState} from 'react';
+import { loginServer } from '../../actions/userActions'
 function SignIn() {
+  const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const dispatch = useDispatch()
+  // const isLoggedIn = useSelector(state=>state.userReducer.isLoggedIn)
+  const signInHandler = (username,password) => {
+    console.log('signin handler', username, password)
+    dispatch(loginServer(username, password))
+  }
   return (
     <>
-    <Card  style={{ width: '24rem', height: 'fit-content' ,padding: '10px' }}>
-      <Card.Body>
-        <Card.Title>Sign In</Card.Title>
-      {/* <Input placeHolder={'User Name'} />
-      <InputPassWord />
-      <Button  onClick={()=>(dispatch(login))} >
-        Submit
-      </Button> */}
-      <Form>
-        <Form.Group controlId="formBasiUserName">
-          <Form.Control type="text" placeholder="User Name" />
-          </Form.Group>
-          
-          <Form.Group controlId="formBasicPassword">
-            <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            
-            <Button variant="primary" type="submit" onClick={()=>(dispatch(login))}>
-              search
-              </Button>
-              
-              </Form>
-              </Card.Body>
-              </Card>
+      <Card style={{ width: '24rem', height: 'fit-content', padding: '10px' }}>
+        <Card.Body>
+          <Card.Title>Sign In</Card.Title>
+          <Form onSubmit={e => {
+            e.preventDefault();
+            signInHandler(loginInfo.username, loginInfo.password)
+          }}>
+            <Form.Row>
+              <Form.Group as={Col}>
+                <Form.Label>User Name</Form.Label>
+                <Form.Control onChange={e => setLoginInfo({ ...loginInfo, username: e.target.value })} value={loginInfo.username} required={true} placeholder="username" type="text" />
+              </Form.Group>
+            </Form.Row>
+            <Form.Row>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control onChange={e => setLoginInfo({ ...loginInfo, password: e.target.value })} value={loginInfo.password} required={true} type="password" placeholder="Password" />
+              </Form.Group>
+            </Form.Row>
+            <Button variant="success" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
     </>
   );
 }

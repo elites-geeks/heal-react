@@ -3,8 +3,8 @@
 import {Button} from 'react-bootstrap'
 import {Form} from 'react-bootstrap'
 function DoctorProfile() {
-    return (
-      <>
+  return (
+    <>
       <h1>New Visit Receiption</h1>
       <Form>
         <Form.Group controlId="formBasicToken">

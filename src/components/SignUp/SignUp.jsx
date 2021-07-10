@@ -1,6 +1,6 @@
 import React from 'react'
 import  {useState } from 'react';
-import {IF,Switch,Case,Default} from 'react-if'
+import {Switch,Case,Default} from 'react-if'
 import Card from 'react-bootstrap/Card';
 
 import UserType from '../UserType/UserType'
@@ -11,7 +11,7 @@ import EmployeeSignUP from '../EmployeeSignUP/EmployeeSignUP'
 import './SignUp.scss'
 
 function SignUp() {
-    const [flag,SetFlag]=useState()
+    // const [flag,SetFlag]=useState()
     const [usertType,SetUSerType]=useState()
     console.log(usertType);
     return (
