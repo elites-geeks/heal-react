@@ -16,20 +16,20 @@ import SignUp from '../../components/SignUp/SignUp'
 // import ClientProfile from '../../components/ClientProfile/ClientProfile'
 import SignIn from '../../components/signin/Signin'
 import Dashboards from '../dashboards/Dashboards'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 import Head from '../../components/Head/Head'
 // import Routes from '../../components/Route/Route'
 function Main() {
-    const isLoggedIn = useSelector(state => state.userReducer.isLoggedIn)
-    const userType = useSelector(state => state.userReducer.user.role);
-    const history = useHistory()
-    useEffect(() => {
-        if (isLoggedIn) {
-            history.push(`/dashboard/${userType}`)
-        } else {
-            history.push(`/`)
-        }
-    });
+    // const isLoggedIn = useSelector(state => state.userReducer.isLoggedIn)
+    // const userType = useSelector(state => state.userReducer.user.role);
+    // const history = useHistory()
+    // useEffect(() => {
+    //     if (isLoggedIn) {
+    //         history.push(`/dashboard/${userType}`)
+    //     } else {
+    //         history.push(`/`)
+    //     }
+    // });
     return (
         <div style={{ flexGrow: 1 }}>
             <Dashboards />

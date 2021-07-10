@@ -5,13 +5,23 @@ import { Form,Button, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux'
 import {useState} from 'react';
 import { loginServer } from '../../actions/userActions'
+import {  useHistory, useLocation } from 'react-router-dom';
 function SignIn() {
+  let location = useLocation();
+  let history = useHistory();
+  let { from } = location.state || { from: { pathname: "/" } };
+  console.log(from)
   const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const dispatch = useDispatch()
   // const isLoggedIn = useSelector(state=>state.userReducer.isLoggedIn)
-  const signInHandler = (username,password) => {
-    console.log('signin handler', username, password)
-    dispatch(loginServer(username, password))
+  const signInHandler = async (username,password) => {
+    const loggedIn = await dispatch(loginServer(username, password))
+    if(loggedIn?.payload?.username){
+      console.log(from.pathname)
+      history.replace(from);
+    }else{
+      console.log("error logged in")
+    }
   }
   return (
     <>
