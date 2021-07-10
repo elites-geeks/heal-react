@@ -4,14 +4,14 @@ import Card from 'react-bootstrap/Card';
 import { Form,Button, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux'
 import {useState} from 'react';
-import { login, userType } from '../../actions/userActions'
+import { loginServer } from '../../actions/userActions'
 function SignIn() {
   const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const dispatch = useDispatch()
   // const isLoggedIn = useSelector(state=>state.userReducer.isLoggedIn)
-  const signInHandler = () => {
-    dispatch(login())
-    dispatch(userType('doctor'))
+  const signInHandler = (username,password) => {
+    console.log('signin handler', username, password)
+    dispatch(loginServer(username, password))
   }
   return (
     <>
@@ -20,8 +20,7 @@ function SignIn() {
           <Card.Title>Sign In</Card.Title>
           <Form onSubmit={e => {
             e.preventDefault();
-            // signIn(loginInfo.username, loginInfo.password)
-            signInHandler();
+            signInHandler(loginInfo.username, loginInfo.password)
           }}>
             <Form.Row>
               <Form.Group as={Col}>
