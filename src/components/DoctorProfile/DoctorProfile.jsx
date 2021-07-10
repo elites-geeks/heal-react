@@ -1,6 +1,8 @@
 
-import Button from '../Buttonsignin/Button'
-import { Link} from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+
+
 
 function DoctorProfile() {
   return (
