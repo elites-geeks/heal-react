@@ -6,10 +6,10 @@ const login =(payload)=>{
         payload
     }
 }
-const loginServer =  (username, password ) =>async (dispatch) => {
+const loginServer =  (username, password) =>async (dispatch) => {
     try{
         const user = await signIn(username, password);
-        dispatch(login(user))
+        return dispatch(login(user))
     }catch(err){
         console.log(err.message)
     }

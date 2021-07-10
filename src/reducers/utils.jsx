@@ -16,7 +16,6 @@ export const signIn = async (username, password) => {
       },
     }
   );
-  console.log("finishawait");
   if (user.data) {
     cookie.save("auth-cookie", user.data.token);
     return jwt.decode(user.data.token);
@@ -25,21 +24,45 @@ export const signIn = async (username, password) => {
   }
 };
 
-export const signUp = async (data) => {
-  console.log(data);
-  const result = await axios({
-    baseURL: baseURL,
-    url: "/admin/patient",
-    method: "post",
-    data: { data },
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": baseURL,
-    },
-  });
-
-  if (result.data) {
-    console.log(result.data);
-    cookie.save("auth-token", result.data.token);
+export const signUp = async (data,type) => {
+  switch (data.type) {
+    case 'client':
+      data = { ...data, role: 'user', type: 'patient' }
+      break
+    case 'doctor':
+      data = { ...data, role: 'user', type: 'doctor' }
+      break;
+    case 'lab':
+      data = { ...data, role: 'user', type: 'lab' }
+      break;
+    case 'radio':
+      data = { ...data, role: 'user', type: 'radio' }
+      break;
+    case 'drug':
+      data = { ...data, role: 'user', type: 'drug' }
+      break;
+    case 'therapy':
+      data = { ...data, role: 'user', type: 'therapy' }
+      break;
+    default:
+      data = { ...data }
+  }
+  try {
+    const result = await axios({
+      baseURL: baseURL,
+      url: "/admin/patient",
+      method: "post",
+      data: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": baseURL,
+      },
+    });
+    if (result.data) {
+      console.log(result.data);
+      cookie.save("auth-token", result.data.token);
+    }
+  } catch (err) {
+    console.log(err.message)
   }
 };

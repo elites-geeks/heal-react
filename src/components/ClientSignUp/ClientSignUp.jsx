@@ -1,30 +1,11 @@
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 
-import { useState } from "react";
 
-import { signUp } from "../../reducers/utils";
 
-function ClientSignUp() {
-  const [formBody, setformBody] = useState({});
-
-  const handleChange = (e) => {
-    console.log("formBody", formBody);
-    setformBody({ ...formBody, [e.target.name]: e.target.value });
-  };
-
+function ClientSignUp({ handleChange}) {
   return (
     <>
-      <Form onSubmit={(e)=>{e.preventDefault();signUp(formBody)} }>
-        <Form.Group>
-          <Form.Control
-            name="username"
-            type="text"
-            placeholder="User Name"
-            onChange={handleChange}
-          />
-        </Form.Group>
-
         <Form.Group>
           <Form.Control
             name="firstname"
@@ -43,15 +24,15 @@ function ClientSignUp() {
           />
         </Form.Group>
 
+
         <Form.Group>
           <Form.Control
+            name="username"
             type="text"
-            name="country"
-            placeholder="Country"
+            placeholder="User Name"
             onChange={handleChange}
           />
         </Form.Group>
-
         <Form.Group>
           <Form.Control
             type="text"
@@ -69,6 +50,14 @@ function ClientSignUp() {
             onChange={handleChange}
           />
         </Form.Group>
+        <Form.Group>
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleChange}
+          />
+        </Form.Group>
 
         <Form.Group>
           <Form.Control
@@ -81,9 +70,9 @@ function ClientSignUp() {
 
         <Form.Group>
           <Form.Control
-            type="password"
-            name="password"
-            placeholder="Password"
+            type="text"
+            name="country"
+            placeholder="Country"
             onChange={handleChange}
           />
         </Form.Group>
@@ -112,50 +101,9 @@ function ClientSignUp() {
             <option value="female">female</option>
           </Form.Control>
         </Form.Group>
-
-        <Form.Group>
-          <Form.Control
-            defaultValue="role"
-            id="roles"
-            name="role"
-            as="select"
-            onChange={handleChange}
-          >
-            <option value="role" disabled>
-              Role
-            </option>
-            <option value="user">user</option>
-            <option value="account">institute</option>
-            <option value="admin">admin</option>
-            <option value="account">account</option>
-            <option value="doctor">doctor</option>
-            <option value="employee">employee</option>
-            <option value="pharmacy">pharmacy</option>
-            <option value="client">client</option>
-            <option value="insurance">insurance</option>
-          </Form.Control>
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Control
-            defaultValue="type"
-            id="types"
-            name="type"
-            as="select"
-            onChange={handleChange}
-          >
-            <option value="type" disabled>
-              Type
-            </option>
-            <option value="patient">patient</option>
-            <option value="doctor">doctor</option>
-            <option value="employee">employee</option>
-          </Form.Control>
-        </Form.Group>
         <Button variant="primary" type="submit">
           Submit
         </Button>
-      </Form>
     </>
   );
 }

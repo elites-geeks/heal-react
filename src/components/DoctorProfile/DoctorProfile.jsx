@@ -5,11 +5,15 @@ function DoctorProfile() {
   return (
     <div className="dashboard">
       <h1>Doctor Profile</h1>
-      <Link to={"/dashboard/doctor/newVisitDoctor"}>
-        <Button>Visit Reception</Button>
+      <Link to={'/dashboard/doctor/newVisitDoctor'}>
+        <Button placeholder={'Visit Reception'}>
+          Visit Reception
+        </Button>
       </Link>
-      <Link to={"/dashboard/doctor/appointments"}>
-        <Button>Appointments</Button>
+      <Link to={'/dashboard/doctor/appointments'}>
+        <Button placeholder={'Appointments'}>
+          Appointments
+        </Button>
       </Link>
     </div>
   );
