@@ -1,31 +1,30 @@
-import React from 'react'
+import React from "react";
 
-import {Form} from 'react-bootstrap'
-import {Button} from 'react-bootstrap' 
+import { Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 function DoctorVisit(props) {
-    return (
-        <div>
-            
-         <Form>
+  return (
+    <div>
+      <Form>
         <Form.Group controlId="formBasiSpecality">
           <Form.Control type="text" placeholder="Specality" />
-          </Form.Group>
-          
-          <Form.Group controlId="formBasicTime">
+        </Form.Group>
+
+        <Form.Group controlId="formBasicTime">
           <Form.Control type="text" placeholder="Time" />
-          </Form.Group>
+        </Form.Group>
 
-          <Form.Group controlId="formBasicCity">
+        <Form.Group controlId="formBasicCity">
           <Form.Control type="text" placeholder="City" />
-          </Form.Group>
+        </Form.Group>
 
-          <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit">
           search
-         </Button>
+        </Button>
       </Form>
-       </div>
-    )
+    </div>
+  );
 }
 
-export default DoctorVisit
+export default DoctorVisit;

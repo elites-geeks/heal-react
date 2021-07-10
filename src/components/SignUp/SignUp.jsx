@@ -1,38 +1,47 @@
-import React from 'react'
-import  {useState } from 'react';
-import {Switch,Case,Default} from 'react-if'
-import Card from 'react-bootstrap/Card';
+import React from "react";
+import { useState } from "react";
+import { Switch, Case, Default } from "react-if";
+import Card from "react-bootstrap/Card";
 
-import UserType from '../UserType/UserType'
- 
-import ClientSignUp from '../ClientSignUp/ClientSignUp'
-import DoctorSignUp from '../DoctorSignUp/DoctorSignUp'
-import EmployeeSignUP from '../EmployeeSignUP/EmployeeSignUP'
-import './SignUp.scss'
+import UserType from "../UserType/UserType";
+
+import ClientSignUp from "../ClientSignUp/ClientSignUp";
+import DoctorSignUp from "../DoctorSignUp/DoctorSignUp";
+import EmployeeSignUP from "../EmployeeSignUP/EmployeeSignUP";
+import "./SignUp.scss";
 
 function SignUp() {
-    // const [flag,SetFlag]=useState()
-    const [usertType,SetUSerType]=useState()
-    console.log(usertType);
-    return (
+  // const [flag,SetFlag]=useState()
+  const [usertType, SetUSerType] = useState();
+  console.log(usertType);
+  return (
     <>
-    <div id="signUpCard">
-    <Card  style={{ width: '24rem', height: 'fit-content' ,padding: '10px' }}>
-    <Card.Body>
-    <Card.Title>Sign Up</Card.Title>
-    <UserType handleUserTypeChange={SetUSerType}/>
-    <Switch>
-        <Case condition={usertType==='client'}><Card.Body><ClientSignUp/></Card.Body></Case>
-        <Case condition={usertType==='doctor'}><DoctorSignUp/></Case>
-        <Case condition={usertType==='employee'}><EmployeeSignUP/></Case>
-        <Default>choose user Type</Default>
-    </Switch>
-    </Card.Body>
-    </Card>
-    </div>
-   
+      <div id="signUpCard">
+        <Card
+          style={{ width: "24rem", height: "fit-content", padding: "10px" }}
+        >
+          <Card.Body>
+            <Card.Title>Sign Up</Card.Title>
+            <UserType handleUserTypeChange={SetUSerType} />
+            <Switch>
+              <Case condition={usertType === "client"}>
+                <Card.Body>
+                  <ClientSignUp />
+                </Card.Body>
+              </Case>
+              <Case condition={usertType === "doctor"}>
+                <DoctorSignUp />
+              </Case>
+              <Case condition={usertType === "employee"}>
+                <EmployeeSignUP />
+              </Case>
+              <Default>choose user Type</Default>
+            </Switch>
+          </Card.Body>
+        </Card>
+      </div>
     </>
-    )
+  );
 }
 
-export default SignUp
+export default SignUp;
