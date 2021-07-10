@@ -6,12 +6,12 @@ function DoctorProfile() {
     <div className="dashboard">
       <h1>Doctor Profile</h1>
       <Link to={'/dashboard/doctor/newVisitDoctor'}>
-        <Button placeHolder={'Visit Reception'}>
+        <Button placeholder={'Visit Reception'}>
           Visit Reception
         </Button>
       </Link>
       <Link to={'/dashboard/doctor/appointments'}>
-        <Button placeHolder={'Appointments'}>
+        <Button placeholder={'Appointments'}>
           Appointments
         </Button>
       </Link>

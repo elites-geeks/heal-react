@@ -9,11 +9,10 @@ import {  useHistory, useLocation } from 'react-router-dom';
 function SignIn() {
   let location = useLocation();
   let history = useHistory();
-  let { from } = location.state || { from: { pathname: "/" } };
+  let { from } = location.state || { from: { pathname:  "/" } };
   console.log(from)
   const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const dispatch = useDispatch()
-  // const isLoggedIn = useSelector(state=>state.userReducer.isLoggedIn)
   const signInHandler = async (username,password) => {
     const loggedIn = await dispatch(loginServer(username, password))
     if(loggedIn?.payload?.username){
@@ -24,8 +23,8 @@ function SignIn() {
     }
   }
   return (
-    <>
-      <Card style={{ width: '24rem', height: 'fit-content', padding: '10px' }}>
+    <div id="signInCard" style={{display:'grid', placeItems:'center', marginTop:'5rem'}}>
+      <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
         <Card.Body>
           <Card.Title>Sign In</Card.Title>
           <Form onSubmit={e => {
@@ -50,7 +49,7 @@ function SignIn() {
           </Form>
         </Card.Body>
       </Card>
-    </>
+    </div>
   );
 }
 
