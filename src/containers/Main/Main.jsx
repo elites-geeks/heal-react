@@ -32,7 +32,9 @@ function Main() {
     });
     return (
         <div style={{ flexGrow: 1 }}>
+        
             <Dashboards />
+        
             <Switch>
                 <Route exact path='/'>
                     <Head />

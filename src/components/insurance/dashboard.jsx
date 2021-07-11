@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 const InsuranceDashboard = (props) => {
   return (
-    <div className="dashboard">
-      <h1>Insurance Rep </h1>
+    <>
+      <h1>Insurance Rep Dashboard</h1>
       <Link to="/subRequests">
         <Button>New subscription Request</Button>
         <br />
@@ -16,7 +16,7 @@ const InsuranceDashboard = (props) => {
         <Button>Add New Policy</Button>
         <br />
       </Link>
-    </div>
+    </>
   );
 };
 

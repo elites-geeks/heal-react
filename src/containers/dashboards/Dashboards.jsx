@@ -16,6 +16,7 @@ import InsuranceSwitch from '../InsuranceSwitch/InsuranceSwitch'
 function Dashboards() {
     const {isLoggedIn , user} = useSelector(state=>state.userReducer);
     return (<>
+
         <DoctorSwitch />
         <ClientSwitch/>
         <AccountantSwitch/>
@@ -34,7 +35,8 @@ function Dashboards() {
                 <InsuranceDashboard />
             </ProtectedRoute>
 
-        </Switch></>)
+        </Switch>
+        </>)
 }
 
 export default Dashboards

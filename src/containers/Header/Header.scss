@@ -1,12 +1,10 @@
 .nav-bar {
     width: 100%;
-    height: 15vh;
-    display: flex;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    min-height: 15vh;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 20vw 1fr 20vw;
     background-color: #ccc;
 
     .logo {
@@ -14,16 +12,16 @@
         justify-content: flex-start;
         align-items: center;
         height: 100%;
-        width: 20vw;
+        width: fit-content;
         position: relative;
         flex-wrap: wrap;
-
+        
         a {
             position: relative;
             display: flex;
             align-items: center;
             text-decoration: none;
-            width: 100px;
+            width: fit-content;
             height: 100px;
 
             &:visited {
@@ -34,16 +32,16 @@
                 margin: 0;
                 text-decoration: none;
                 font-family: 'Engagement-Regular';
-                font-size: 3rem;
+                font-size: 2rem;
                 color: tomato;
                 margin-left: 10px;
             }
 
             img {
-                width: 50%;
-                height: 50%;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
-                animation: rotate 3s linear infinite;
+                animation: rotate 10s linear infinite;
 
                 @keyframes rotate {
                     0%{
@@ -202,23 +200,25 @@
                 background-color: #2a7bb3;
 
                 &:hover {
+                    transform: scale(1.05);
                     background-color: #256796;
                     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.438);
                 }
-
+                
                 &:active {
                     background-color: #4885b1;
                     box-shadow: inset 0 0 3px black;
                 }
             }
-
+            
             &:first-child {
                 border-radius: 25px;
                 border: 1px solid tomato;
                 box-shadow: none;
                 background: transparent;
-
+                
                 &:hover {
+                    transform: scale(1.05);
                     background-color: rgb(167, 166, 166);
                     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.438);
                 }

@@ -27,13 +27,14 @@ function SignUp() {
         <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
           <Card.Body>
             <Form
+            style={{paddingTop:"1rem"}}
               onSubmit={(e) => {
                 e.preventDefault()
                 signUp(formBody)
               }}
             >
               <h2>Sign Up</h2>
-              <UserType changeType={handleChange} />
+              <UserType style={{marginTop:"3rem"}} changeType={handleChange} />
               <Switch>
                 <Case condition={userType === "client"}>
                   <Card.Body>
@@ -41,12 +42,20 @@ function SignUp() {
                   </Card.Body>
                 </Case>
                 <Case condition={userType === "doctor"}>
-                  <DoctorSignUp handleChange={handleChange} />
+                  <Card.Body>
+                    <DoctorSignUp handleChange={handleChange} />
+                  </Card.Body>
                 </Case>
                 <Case condition={userType === "employee"}>
-                  <EmployeeSignUP handleChange={handleChange} />
+                  <Card.Body>
+                    <EmployeeSignUP handleChange={handleChange} />
+                  </Card.Body>
                 </Case>
-                <Default>choose user Type</Default>
+                <Default>
+                  <Card.Body>
+                    Choose user type...
+                  </Card.Body>
+                </Default>
               </Switch>
             </Form>
           </Card.Body>

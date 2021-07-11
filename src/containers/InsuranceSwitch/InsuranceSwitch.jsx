@@ -9,13 +9,19 @@ function InsuranceSwitch() {
   return (
     <Switch>
       <Route exact path={"/subRequests"}>
-        <subRequest />
+        <div className="dashboard">
+          <subRequest />
+        </div>
       </Route>
       <Route exact path={"/pendingVisits"}>
-        <pendingVisits />
+        <div className="dashboard">
+          <pendingVisits />
+        </div>
       </Route>
       <Route exact path={"/addNewPolicy"}>
-        <addNewPolicy />
+        <div className="dashboard">
+          <addNewPolicy />
+        </div>
       </Route>
     </Switch>
   );

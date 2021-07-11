@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 function DoctorProfile() {
   return (
-    <div className="dashboard">
-      <h1>Doctor Profile</h1>
+    <><div className="dashboard">
+
+      <h1>Doctor Dashboard</h1>
       <Link to={'/dashboard/doctor/newVisitDoctor'}>
         <Button placeholder={'Visit Reception'}>
           Visit Reception
@@ -16,6 +17,7 @@ function DoctorProfile() {
         </Button>
       </Link>
     </div>
+    </>
   );
 }
 
