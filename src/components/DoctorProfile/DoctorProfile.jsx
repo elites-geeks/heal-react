@@ -1,20 +1,15 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import {getAppointment} from "../../reducers/utils"
-import cookie from "react-cookies";
+
 
 
 function DoctorProfile() {
-  // const getAppointments=()=>{
-  //   // console.log(cookie.get("auth-cookie"))
-  //   getAppointment();
 
-  // }
   return (
     <><div className="dashboard">
 
       <h1>Doctor Dashboard</h1>
-      <Link to={'/dashboard/doctor/newVisitDoctor'}>
+      <Link to={'/dashboard/doctor/add/procedure'}>
         <Button >
           Visit Reception
         </Button>

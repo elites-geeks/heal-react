@@ -21,8 +21,7 @@ const Appointments = (props) => {
         console.log(result.data);
         setappointments([...result.data]);
       });
-      // console.log(result.data)
-      // setappointments(await Promise.all( [...result.data]))
+
     }
     fetchMyAPI();
   }, []);
