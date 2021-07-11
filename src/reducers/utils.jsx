@@ -56,6 +56,7 @@ export const signUp = async (data) => {
     if (result.data) {
       console.log(result.data);
       cookie.save("auth-token", result.data.token);
+      return result.data.user
     }
   } catch (err) {
     console.log(err.message)

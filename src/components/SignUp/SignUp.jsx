@@ -11,6 +11,8 @@ import EmployeeSignUP from "../EmployeeSignUP/EmployeeSignUP";
 import "./SignUp.scss";
 import { Form } from "react-bootstrap";
 import { signUp } from "../../reducers/utils";
+import { useHistory } from "react-router-dom";
+
 
 function SignUp() {
   const [userType, setUserType] = useState('');
@@ -21,6 +23,7 @@ function SignUp() {
   const handleChange = (e) => {
     setFormBody({ ...formBody, [e.target.name]: e.target.value });
   };
+  const history = useHistory();
   return (
     <>
       <div className="signCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
@@ -30,7 +33,13 @@ function SignUp() {
             style={{paddingTop:"1rem"}}
               onSubmit={(e) => {
                 e.preventDefault()
-                signUp(formBody)
+                const user =signUp(formBody)
+                console.log("user Sign up")
+                if(user?.userProfile?.info?.role){
+                  history.push(`/dashboard/${user.userProfile.info.role}`)
+                }else{
+                  console.log("Error when sign up") 
+                }
               }}
             >
               <h2>Sign Up</h2>
