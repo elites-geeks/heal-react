@@ -6,7 +6,8 @@ import pendingProcedures from '../../components/pendingProcedures/pendingProcedu
 import Appointments from '../../components/Appointments/Appointments'
 import ClientProcedures from '../../components/ClientProcedures/ClientProcedures'
 import SubscribeToInsuranceCompany from '../../components/SubscribeToInsuranceCompany/SubscribeToInsuranceCompany'
-
+import MakeDoctorVisit from '../../components/MakeDoctorVisit/MakeDoctorVisit'
+import SearchResult from '../../components/SearchResult/SearchResult';
 function ClientSwitch() {
     return (
         <Switch>
@@ -33,6 +34,16 @@ function ClientSwitch() {
             <Route exact path={'/Subscribe'}>
             <div className="dashboard">
                 <SubscribeToInsuranceCompany />
+            </div>
+            </Route>
+            <Route exact path={'/Doctor/visit'}>
+            <div className="dashboard">
+                <MakeDoctorVisit />
+            </div>
+            </Route>
+            <Route exact path={'/dashboard/client/searchresult'}>
+            <div className="dashboard">
+                < SearchResult/>
             </div>
             </Route>
         </Switch>
