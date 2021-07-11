@@ -1,29 +1,28 @@
-// import Input from '../InputName/Input'
-// import InputPassWord from '../InputPassword/Input'
 import Card from 'react-bootstrap/Card';
-import { Form,Button, Col } from 'react-bootstrap';
+import { Form, Button, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux'
-import {useState} from 'react';
+import { useState } from 'react';
 import { loginServer } from '../../actions/userActions'
-import {  useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 function SignIn() {
+  console.log("I am in login")
   let location = useLocation();
   let history = useHistory();
-  let { from } = location.state || { from: { pathname:  "/" } };
+  let { from } = location.state || { from: { pathname: "/" } };
   console.log(from)
   const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const dispatch = useDispatch()
-  const signInHandler = async (username,password) => {
+  const signInHandler = async (username, password) => {
     const loggedIn = await dispatch(loginServer(username, password))
-    if(loggedIn?.payload?.username){
-      history.replace({...from, pathname:from.pathname==="/"? `/dashboard/${loggedIn.payload.role}`:from.pathname});
-    }else{
+    if (loggedIn?.payload?.username) {
+      history.replace({ ...from, pathname: from.pathname === "/" ? `/dashboard/${loggedIn.payload.role}` : from.pathname });
+    } else {
       console.log("error logged in")
     }
   }
   return (
-    <div id="signInCard" style={{display:'grid', placeItems:'center', marginTop:'5rem'}}>
-      <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
+    <div className="signCard" style={{ display: 'grid', placeItems: 'center', }}>
+      <Card style={{ width: "24rem", height: "fit-content", background: '#333', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
         <Card.Body>
           <Card.Title>Sign In</Card.Title>
           <Form onSubmit={e => {

@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-function DoctorVisit(props) {
+function PatientSub(props) {
   return (
     <div>
       <Link to="/patient/history">
@@ -19,4 +19,4 @@ function DoctorVisit(props) {
   );
 }
 
-export default DoctorVisit;
+export default PatientSub;

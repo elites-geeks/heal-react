@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-const InsuranceDashboard = (props) => {
+const InsuranceDashboard = () => {
   return (
     <>
       <h1>Insurance Rep Dashboard</h1>

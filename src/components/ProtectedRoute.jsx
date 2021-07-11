@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-
 function ProtectedRoute({isAuth, children, ...rest }) {
+  console.log(isAuth)
     return (
       <Route
         {...rest}

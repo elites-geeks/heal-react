@@ -23,7 +23,7 @@ function SignUp() {
   };
   return (
     <>
-      <div id="signUpCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
+      <div className="signCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
         <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
           <Card.Body>
             <Form
@@ -34,7 +34,7 @@ function SignUp() {
               }}
             >
               <h2>Sign Up</h2>
-              <UserType style={{marginTop:"3rem"}} changeType={handleChange} />
+              <UserType  changeType={handleChange} />
               <Switch>
                 <Case condition={userType === "client"}>
                   <Card.Body>
