@@ -24,7 +24,7 @@ function SignUp() {
   return (
     <>
       <div className="signCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
-        <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
+        <Card style={{ width: "24rem", height: "fit-content", background: '#333', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
           <Card.Body>
             <Form
             style={{paddingTop:"1rem"}}

@@ -30,10 +30,10 @@ function Dashboards() {
             <ProtectedRoute exact path='/dashboard/doctor' isAuth={isLoggedIn&&user.role==='doctor'}>
                 <DoctorProfile />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/dashboard/accountant' isAuth={isLoggedIn&&user.role==='account'}>
+            <ProtectedRoute exact path='/dashboard/account' isAuth={isLoggedIn&&user.role==='account'}>
                 <AccountantProfile />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/dashboard/insuranceRep' isAuth={isLoggedIn&&user.role==='insurance'}>
+            <ProtectedRoute exact path='/dashboard/insurance' isAuth={isLoggedIn&&user.role==='insurance'}>
                 <InsuranceDashboard />
             </ProtectedRoute>
             <ProtectedRoute exact path='/dashboard/employee' isAuth={isLoggedIn&&user.role==='employee'}>

@@ -12,9 +12,7 @@ function UserType({changeType}) {
           </option>
           <option value="client">Client</option>
           <option value="doctor">Doctor</option>
-          <option value="employee">Medical Staff</option>
-          <option value="accountant">Accountant</option>
-          <option value="insurance-rep">Insurance Rep</option>
+          <option value="employee">Employee</option>
         </Form.Control>
       </Form.Group>
     </>

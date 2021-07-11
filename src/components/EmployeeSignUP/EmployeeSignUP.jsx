@@ -100,13 +100,18 @@ function EmployeeSignUP({ handleChange }) {
         />
       </Form.Group>
 
-      <Form.Group>
-        <Form.Control
-          name="field"
-          onChange={handleChange}
-          type="text"
-          placeholder="Field"
-        />
+      <Form.Group controlId="formGridState">
+        <Form.Control as="select" defaultValue="none" name="field" onChange={handleChange}>
+          <option value="none" disabled>
+            Filed of specialty
+          </option>
+          <option value="lab">Laboratory Technologies</option>
+          <option value="drug">Pharmacist</option>
+          <option value="radio">Radiologist</option>
+          <option value="therapy">Therapist</option>
+          <option value="account">Accountant</option>
+          <option value="insurance">Insurance Representative</option>
+        </Form.Control>
       </Form.Group>
       <Form.Group>
         <Form.Control
