@@ -3,8 +3,8 @@
 .dashboard{
     width: 100%;
     height: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    min-height: 75vh;
+    display: grid;
+    place-items: center;
+    background-color: #333;
 }

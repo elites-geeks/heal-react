@@ -17,6 +17,7 @@ import EmployeeSwitch from "../EmployeeSwitch/EmployeeSwitch";
 function Dashboards() {
     const {isLoggedIn , user} = useSelector(state=>state.userReducer);
     return (<>
+
         <DoctorSwitch />
         <ClientSwitch/>
         <AccountantSwitch/>
@@ -39,7 +40,8 @@ function Dashboards() {
                 <EmployeeProfile />
             </ProtectedRoute>
 
-        </Switch></>)
+        </Switch>
+        </>)
 }
 
 export default Dashboards;

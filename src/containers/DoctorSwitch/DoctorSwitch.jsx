@@ -7,10 +7,14 @@ function DoctorSwitch() {
     return (
         <Switch>
             <Route exact path={'/dashboard/doctor/newVisitDoctor'}>
-                <DoctorVisitReceiption />
+                <div className="dashboard">
+                    <DoctorVisitReceiption />
+                </div>
             </Route>
             <Route exact path={'/dashboard/doctor/appointments'}>
-                <Appointments />
+                <div className="dashboard">
+                    <Appointments />
+                </div>
             </Route>
         </Switch>
     )

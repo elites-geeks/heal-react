@@ -7,12 +7,16 @@ function AccountantSwitch() {
     return (
         <Switch>
             <Route exact path={'/new/AccountantVisitReceiption'}>
-                <DoctorVisitReceiption />
+                <div className="dashboard">
+                    <DoctorVisitReceiption />
+                </div>
             </Route>
             <Route exact path={'/InvoicesExported'}>
-                <InvoicesExported/>
+                <div className="dashboard">
+                    <InvoicesExported />
+                </div>
             </Route>
-         
+
         </Switch>
     )
 }

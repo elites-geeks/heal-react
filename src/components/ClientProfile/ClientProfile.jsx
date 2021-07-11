@@ -9,7 +9,7 @@ function ClientProfile() {
     <Switch>
       <Route path="/dashboard/client">
         <div className="dashboard">
-          <h1>Client Profile</h1>
+          <h1>Client Dashboard</h1>
           <Link to="/makenewVisit">
             <Button style={style}>Open a new Visit</Button>
           </Link>

@@ -19,22 +19,22 @@ function SignUp() {
     setUserType(formBody.type)
   }, [formBody])
   const handleChange = (e) => {
-    console.log(formBody)
     setFormBody({ ...formBody, [e.target.name]: e.target.value });
   };
   return (
     <>
-      <div id="signUpCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
+      <div className="signCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
         <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
           <Card.Body>
             <Form
+            style={{paddingTop:"1rem"}}
               onSubmit={(e) => {
                 e.preventDefault()
                 signUp(formBody)
               }}
             >
               <h2>Sign Up</h2>
-              <UserType changeType={handleChange} />
+              <UserType  changeType={handleChange} />
               <Switch>
                 <Case condition={userType === "client"}>
                   <Card.Body>
@@ -42,12 +42,20 @@ function SignUp() {
                   </Card.Body>
                 </Case>
                 <Case condition={userType === "doctor"}>
-                  <DoctorSignUp handleChange={handleChange} />
+                  <Card.Body>
+                    <DoctorSignUp handleChange={handleChange} />
+                  </Card.Body>
                 </Case>
                 <Case condition={userType === "employee"}>
-                  <EmployeeSignUP handleChange={handleChange} />
+                  <Card.Body>
+                    <EmployeeSignUP handleChange={handleChange} />
+                  </Card.Body>
                 </Case>
-                <Default>choose user Type</Default>
+                <Default>
+                  <Card.Body>
+                    Choose user type...
+                  </Card.Body>
+                </Default>
               </Switch>
             </Form>
           </Card.Body>
