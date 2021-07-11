@@ -1,22 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 import { Button } from "react-bootstrap";
-const InsuranceDashboard = () => {
+const InsuranceDashboard = (props) => {
   return (
-    <>
-      <h1>Insurance Rep Dashboard</h1>
-      <Link to="/subRequests">
-        <Button>New subscription Request</Button>
-        <br />
-      </Link>
-      <Link to="/pendingVisits">
-        <Button>Pending Visits</Button>
-        <br />
-      </Link>
-      <Link to="/addNewPolicy">
-        <Button>Add New Policy</Button>
-        <br />
-      </Link>
-    </>
+    <Switch>
+      <Route path="/dashboard/insurance">
+        <div className="dashboard">
+          <h1>Insurance Rep Dashboard</h1>
+          <Link to="/subRequests">
+            <Button>New subscription Request</Button>
+            <br />
+          </Link>
+          <Link to="/pendingVisits">
+            <Button>Pending Visits</Button>
+            <br />
+          </Link>
+          <Link to="/addNewPolicy">
+            <Button>Add New Policy</Button>
+            <br />
+          </Link>
+        </div>
+      </Route>
+    </Switch>
   );
 };
 

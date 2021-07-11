@@ -32,28 +32,16 @@ export const signUp = async (data) => {
     case 'doctor':
       data = { ...data, role: 'user', type: 'doctor' }
       break;
-    case 'lab':
-      data = { ...data, role: 'user', type: 'lab' }
-      break;
-    case 'radio':
-      data = { ...data, role: 'user', type: 'radio' }
-      break;
-    case 'drug':
-      data = { ...data, role: 'user', type: 'drug' }
-      break;
-    case 'therapy':
-      data = { ...data, role: 'user', type: 'therapy' }
-      break;
-      case 'employee':
+    case 'employee':
       data = { ...data, role: 'user', type: 'employee' }
       break;
     default:
       data = { ...data }
   }
   try {
-    console.log('data',data)
+    console.log('data', data)
     console.log(`/admin/${data.type}`)
-    console.log('data.type',data.type)
+    console.log('data.type', data.type)
     const result = await axios({
       baseURL: baseURL,
       url: `/admin/${data.type}`,
@@ -74,17 +62,17 @@ export const signUp = async (data) => {
   }
 };
 
-export const getCookie = ()=>{
+export const getCookie = () => {
   const token = cookie.load('auth-token')
-  if(token){
-      const user = jwt.decode(token);
-      return user;     
-  }else{
+  if (token) {
+    const user = jwt.decode(token);
+    return user;
+  } else {
     return null;
   }
 }
 
 
-export const signOut = ()=>{
-  cookie.remove('auth-token'); 
+export const signOut = () => {
+  cookie.remove('auth-token');
 }
