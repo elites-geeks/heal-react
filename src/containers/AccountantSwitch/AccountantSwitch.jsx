@@ -1,14 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-
-import DoctorVisitReceiption from '../../components/DoctorVisitReceiption/DoctorVisitReceiption';
+import AccountantVisitReceiption from '../../components/AccountantVisitReceiption/AccountantVisitReceiption'
+import PatientReception from '../../components/patientReception/patientReception'
 import InvoicesExported from '../../components/InvoicesExported/InvoicesExported';
+
 function AccountantSwitch() {
     return (
         <Switch>
+             <Route exact path={'/patientReception'}>
+                <div className="dashboard">
+                   <PatientReception/>
+                </div>
+            </Route>
             <Route exact path={'/new/AccountantVisitReceiption'}>
                 <div className="dashboard">
-                    <DoctorVisitReceiption />
+                <AccountantVisitReceiption />
+                    {/* <DoctorVisitReceiption /> */}
                 </div>
             </Route>
             <Route exact path={'/InvoicesExported'}>
@@ -16,6 +23,7 @@ function AccountantSwitch() {
                     <InvoicesExported />
                 </div>
             </Route>
+           
 
         </Switch>
     )
