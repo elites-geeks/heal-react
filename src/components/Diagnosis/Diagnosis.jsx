@@ -1,9 +1,11 @@
 import { Form } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-
+import {Switch,Route } from "react-router-dom";
 function Diagnosis() {
   return (
     <>
+    <Switch>
+      <Route path="/dashboard/doctor/diagnosis">
       <h1>Diagnosis </h1>
 
       <Form.Group controlId="formBasiSymptoms">
@@ -25,6 +27,8 @@ function Diagnosis() {
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      </Route>
+      </Switch>
     </>
   );
 }

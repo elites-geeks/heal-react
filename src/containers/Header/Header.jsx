@@ -34,7 +34,7 @@ function Header() {
                         title={<><PersonCircle  /> {user.user?.username.toUpperCase()}</>}
                     >
                         <Dropdown.Item eventKey="1">Edit Profile</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Sittings</Dropdown.Item>
+                        <Dropdown.Item eventKey="2">Settings</Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item onClick={signOutHandler} eventKey="3">Sign out</Dropdown.Item>
                     </DropdownButton>
