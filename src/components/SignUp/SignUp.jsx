@@ -19,6 +19,7 @@ function SignUp() {
     setUserType(formBody.type)
   }, [formBody])
   const handleChange = (e) => {
+    console.log(formBody)
     setFormBody({ ...formBody, [e.target.name]: e.target.value });
   };
   return (
