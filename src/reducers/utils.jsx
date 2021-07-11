@@ -17,12 +17,7 @@ export const signIn = async (username, password) => {
     }
   );
   if (user.data) {
-<<<<<<< HEAD
-    console.log('user.data',user.data)
-    cookie.save("auth-cookie", user.data.token);
-=======
     cookie.save("auth-token", user.data.token);
->>>>>>> cae71a0b518bb4d30cb63ea85917b05b45b6856b
     return jwt.decode(user.data.token);
   } else {
     return "Invalid user";
