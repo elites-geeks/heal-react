@@ -16,7 +16,7 @@ function ClientProfile() {
           <Link to="/viewPendingProcedures">
             <Button style={style}>View Pending procedures</Button>
           </Link>
-          <Link to="/client/appointment/:id">
+          <Link to="/client/appointment">
             <Button style={style}>Appointments</Button>
           </Link>
           <Link to="/client/procedures/:id">

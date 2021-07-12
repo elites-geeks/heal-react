@@ -5,9 +5,10 @@ import { Button } from "react-bootstrap";
 
 function PatientSub(props) {
   return (
+   
     <Switch>
       <Route path="/dashboard/doctor/patientSub">
-    <div>
+      <div className="dashboard">
       <Link to="/patient/history">
         <Button>View patient history</Button>
       </Link>
@@ -17,9 +18,10 @@ function PatientSub(props) {
       <Link to="/dashboard/doctor/add/procedure">
         <Button>add procedure</Button>
       </Link>
-    </div>
+      </div>
     </Route>
     </Switch>
+   
   );
 }
 
