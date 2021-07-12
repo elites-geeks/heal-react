@@ -9,7 +9,7 @@ const userReducer = (state = auth, action) => {
     switch (type) {
         case 'LOGIN':
             if (payload !== 'Invalid user') {
-
+                
                 return { user: { ...payload }, isLoggedIn: true }
             } else {
                 return state;
