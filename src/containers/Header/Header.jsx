@@ -10,6 +10,7 @@ import { Dropdown } from 'react-bootstrap'
 import {signOut} from '../../reducers/utils'
 import { useHistory } from 'react-router-dom'
 import {logout} from '../../actions/userActions'
+import BellIcon from './BellIcon'
 function Header() {
     const history = useHistory()
     const dispatch = useDispatch()
@@ -19,14 +20,14 @@ function Header() {
         dispatch(logout())
     }
     const user = useSelector(state => state.userReducer)
-    console.log(user.user)
+    const notifications = useSelector(state=>state.doctorNotifications)
     return (
         <>
             <div className="nav-bar">
                 <Logo />
                 <Nav />
-                {user.isLoggedIn ? (<Navbar.Text>
-                    Signed in as:{" "}
+                {user.isLoggedIn ? (<div style={{display:"flex"}}><BellIcon notifications={notifications} /><Navbar.Text style={{display:"flex"}}>
+                    
                     <DropdownButton
                         style={{width:"fit-content"}}
                         variant="secondary"
@@ -38,7 +39,7 @@ function Header() {
                         <Dropdown.Divider />
                         <Dropdown.Item onClick={signOutHandler} eventKey="3">Sign out</Dropdown.Item>
                     </DropdownButton>
-                </Navbar.Text>) : (
+                </Navbar.Text></div>) : (
                     <Hamburger />
                 )}
             </div>

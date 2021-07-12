@@ -4,13 +4,20 @@ import Footer from './containers/Footer/Footer'
 import { getCookie } from './reducers/utils';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import {login } from './actions/userActions'
+import { login } from './actions/userActions'
+import io from 'socket.io-client';
+const socket = io("https://elite-heal.herokuapp.com")
 function App() {
-const dispatch=  useDispatch()
-  
-  useEffect(()=>{
+  const dispatch = useDispatch()
+  useEffect(() => {
+    socket.emit('test', 'hello')
+    socket.on('test', pay => {
+      console.log(pay);
+  })
+  }, [])
+  useEffect(() => {
     const user = getCookie()
-    if(user){
+    if (user) {
       dispatch(login(user))
     }
   });

@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import base64 from "base-64";
 import axios from "axios";
+import moment from "moment";
 import cookie from "react-cookies";
 const baseURL = "https://elite-heal.herokuapp.com";
 
@@ -39,9 +40,6 @@ export const signUp = async (data) => {
       data = { ...data }
   }
   try {
-    console.log('data', data)
-    console.log(`/admin/${data.type}`)
-    console.log('data.type', data.type)
     const result = await axios({
       baseURL: baseURL,
       url: `/admin/${data.type}`,
@@ -52,10 +50,9 @@ export const signUp = async (data) => {
         "Access-Control-Allow-Origin": baseURL,
       },
     });
-    console.log(result.data)
     if (result.data) {
-      console.log(result.data);
       cookie.save("auth-token", result.data.token);
+      return result.data.user
     }
   } catch (err) {
     console.log(err.message)
@@ -75,4 +72,37 @@ export const getCookie = () => {
 
 export const signOut = () => {
   cookie.remove('auth-token');
+}
+
+
+export const searchForDoctor = async (search) => {
+  try {
+    const docs = await axios.post(`${baseURL}/patient/appointment/search`, search, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": baseURL,
+      }
+    });
+    return docs.data;
+  } catch (err) {
+    console.log(err.message)
+  }
+}
+
+export const reserveAppointment = async (appointment) => {
+  let time = moment(appointment.time).format("HH:00");
+  let date = moment(appointment.date).format("YYYY-MM-DD");
+  let patientId = appointment.patientId; 
+  console.log("appointment =====>>>>>>>>>>>",{patientId, time, date })
+  try {
+    const reservation = await axios.post(`${baseURL}/patient/appointment/search/${appointment.docId}`, {patientId, time, date }, {
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": baseURL,
+      }
+    });
+    return reservation.data;
+  } catch (err) {
+    console.log(err.message)
+  }
 }
