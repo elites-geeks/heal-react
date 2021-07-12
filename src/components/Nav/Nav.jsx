@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 function Nav() {
-    console.log('render')
     const isLoggedIn = useSelector(state => state.userReducer.isLoggedIn);
     const userType = useSelector(state => state.userReducer.user.role)
     // const pages = [{ name: "HOME", path: `/` }, { name: 'REGISTER', path: 'register' }, { name: 'log in', path: 'login' }]

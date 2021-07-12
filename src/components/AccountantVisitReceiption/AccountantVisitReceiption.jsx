@@ -1,7 +1,7 @@
 
 //import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { Button ,Table} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 function AccountantVisitReceiption() {
     return (

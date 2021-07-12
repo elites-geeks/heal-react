@@ -11,21 +11,17 @@ const Appointments = (props) => {
   const userid = useSelector((state) => state.userReducer.user.id);
   useEffect(() => {
     async function fetchMyAPI() {
-      console.log(userid);
       await axios({
         baseURL: baseURL,
         url: `/doctor/appointment/${userid}`,
         method: "get",
       }).then(async (result) => {
-        console.log(result);
-        console.log(result.data);
         setappointments([...result.data]);
       });
 
     }
     fetchMyAPI();
-  }, []);
-  console.log("appointments", appointments);
+  }, [userid]);
   return (
     <div>
       <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>

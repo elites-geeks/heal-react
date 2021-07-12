@@ -34,7 +34,6 @@ function SignUp() {
               onSubmit={(e) => {
                 e.preventDefault()
                 const user =signUp(formBody)
-                console.log("user Sign up")
                 if(user?.userProfile?.info?.role){
                   history.push(`/dashboard/${user.userProfile.info.role}`)
                 }else{

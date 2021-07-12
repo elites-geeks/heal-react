@@ -5,11 +5,9 @@ import { useState } from 'react';
 import { loginServer } from '../../actions/userActions'
 import { useHistory, useLocation } from 'react-router-dom';
 function SignIn() {
-  console.log("I am in login")
   let location = useLocation();
   let history = useHistory();
   let { from } = location.state || { from: { pathname: "/" } };
-  console.log(from)
   const [loginInfo, setLoginInfo] = useState({ username: "", password: "" });
   const dispatch = useDispatch()
   const signInHandler = async (username, password) => {

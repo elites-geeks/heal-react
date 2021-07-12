@@ -21,5 +21,11 @@ export const logout = ()=>{
     }
 }
 
+export const pushDoctorNotification = (payload)=>{
+    return{
+        type:"PUSH",
+        payload
+    }
+}
 
 export {  loginServer };
