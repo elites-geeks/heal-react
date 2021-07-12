@@ -27,7 +27,7 @@ function DoctorProfile() {
     <><div className="dashboard">
 
       <h1>Doctor Dashboard</h1>
-      <Link to={'/dashboard/doctor/add/procedure'}>
+      <Link to={'/dashboard/doctor/newVisitDoctor'}>
         <Button >
           Visit Reception
         </Button>
