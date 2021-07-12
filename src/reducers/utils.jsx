@@ -106,3 +106,17 @@ export const reserveAppointment = async (appointment) => {
     console.log(err.message)
   }
 }
+
+
+// export const getInsuranceInfo= async () => {
+  
+//   await axios({
+//     baseURL: baseURL,
+//     url: `/insurance/insurance`,
+//     method: "get",
+//   }).then(async (result) => {
+//     console.log('result.data',result.data)
+//     return result.data
+//   });
+
+// }

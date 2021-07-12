@@ -8,24 +8,34 @@ const baseURL = "https://elite-heal.herokuapp.com";
 
 const Appointments = (props) => {
   const [appointments, setappointments] = useState([]);
-  const userid = useSelector((state) => state.userReducer.user.id);
+  const userid = useSelector((state) => state.userReducer.user.parentId);
+  const user = useSelector((state) => state.userReducer.user);
+  console.log('user',user)
   useEffect(() => {
+    console.log('userid',userid)
+    console.log('inside use effect')
+    fetchMyAPI();
     async function fetchMyAPI() {
+      console.log('fetchMyAPI')
       await axios({
         baseURL: baseURL,
         url: `/doctor/appointment/${userid}`,
         method: "get",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": baseURL,
+        }
       }).then(async (result) => {
+        console.log('result.data',result.data)
         setappointments([...result.data]);
       });
 
     }
-    fetchMyAPI();
+   
   }, [userid]);
   return (
     <div>
-      <Card style={{ width: "24rem", height: "fit-content", padding: "10px" }}>
-        <Card.Body>
+      
           {!appointments.length ? (
             <h1>no available appointments</h1>
           ) : (
@@ -33,22 +43,22 @@ const Appointments = (props) => {
               return (
                 <Card
                   style={{
-                    width: "24rem",
+                    width: "20rem",
                     height: "fit-content",
                     padding: "10px",
                   }}
                 >
                   <Card.Body>
-                    <p>{appoint.time}</p>
-                    <p>{appoint.date}</p>
-                    <p>{appoint.patient}</p>
+                  <Card.Header>Appointment</Card.Header>
+                    <p>date : {appoint.elem.date}</p>
+                    <p>time : {appoint.elem.time}</p>
+                    <p>name : {appoint.patient.userProfile.firstname} {appoint.patient.userProfile.lastname}</p>
                   </Card.Body>
                 </Card>
               );
             })
           )}
-        </Card.Body>
-      </Card>
+       
     </div>
   );
 };
