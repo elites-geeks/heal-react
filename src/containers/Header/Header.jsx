@@ -27,7 +27,6 @@ function Header() {
                 <Logo />
                 <Nav />
                 {user.isLoggedIn ? (<div style={{display:"flex"}}><BellIcon notifications={notifications} /><Navbar.Text style={{display:"flex"}}>
-                    
                     <DropdownButton
                         style={{width:"fit-content"}}
                         variant="secondary"
