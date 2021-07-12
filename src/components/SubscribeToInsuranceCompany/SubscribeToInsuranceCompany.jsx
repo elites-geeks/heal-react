@@ -3,13 +3,15 @@ import React, { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const baseURL = "https://elite-heal.herokuapp.com";
 
 function SubscribeToInsuranceCompany(props) {
+  const user = useSelector(state => state.userReducer.user)
   const [insuranceCompanies, setinsuranceCompanies] = useState([]);
   const [listOfpolicies, setlistOfpolicies] = useState([]);
-  const [formBody, setFormBody] = useState({});
+  const [formBody, setFormBody] = useState({ insurance: "none", patientId: user.parentId });
   useEffect(() => {
     getInsuranceInfo();
     async function getInsuranceInfo() {
@@ -23,55 +25,50 @@ function SubscribeToInsuranceCompany(props) {
         },
       }).then(async (result) => {
         setinsuranceCompanies(result.data);
-        // console.log(result.data)
       });
     }
-  },[]);
+  }, []);
 
-  async function handleSubmit() {
-    console.log(formBody);
-    await axios({
-      baseURL: baseURL,
-      url: `/patient/insurance/subscribe`,
-      method: "post",
-      data: JSON.stringify(formBody),
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": baseURL,
-      },
-    })
+  async function handleSubmit(e) {
+    e.preventDefault()
+    if (formBody.insuranceComp && formBody.policy) {
+
+      await axios({
+        baseURL: baseURL,
+        url: `/patient/insurance/subscribe`,
+        method: "post",
+        data: JSON.stringify(formBody),
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": baseURL,
+        },
+      })
+    }
   }
 
   return (
     <div>
       <Form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSubmit();
-        }}
+        onSubmit={handleSubmit}
       >
         <Form.Group>
           <Form.Control
-          name="insurance"
-          value={formBody}
+            name="insurance"
+            value={formBody.insurance}
             as="select"
             onChange={(e) => {
-              e.preventDefault();
-              console.log("e.target.value", e.target.value);
-              setlistOfpolicies(
-                insuranceCompanies.filter(
-                  (element) => element.profile.name === e.target.value
-                )
-              );
-              console.log("listOfpolicies", listOfpolicies);
-              setFormBody({ ...formBody, [e.target.name]: e.target.value });
+              setFormBody({ insurance: "none", patientId: user.parentId })
+              const insComp = insuranceCompanies.filter(
+                (element) => element.profile.name === e.target.value
+              )
+              setlistOfpolicies(insComp[0].listOfPolicies)
+              setFormBody({ ...formBody, insurance: e.target.value, insuranceComp: insComp[0]._id });
             }}
           >
-            <option selected disabled>
+            <option value="none" disabled={true}>
               Insurance Companies
             </option>
             {insuranceCompanies.map((element, idx) => {
-              console.log(element.profile.username);
               return (
                 <option key={idx} value={element.profile.name}>
                   {element.profile.name}
@@ -80,16 +77,17 @@ function SubscribeToInsuranceCompany(props) {
             })}
           </Form.Control>
           <Form.Control
+            name="policy"
             as="select"
             onChange={(e) => {
-              setFormBody({ ...formBody, [e.target.name]: e.target.value });
+              const policy = listOfpolicies.filter(elem => elem.name === e.target.value)
+              setFormBody({ ...formBody, policy: policy[0] });
             }}
           >
-            <option selected disabled>
+            <option disabled>
               Policies available
             </option>
             {listOfpolicies.map((element, idx) => {
-              console.log(element.listOfPolicies.offerName);
               return (
                 <option key={idx} value={element.listOfPolicies.offerName}>
                   {element.listOfPolicies.offerName}
@@ -98,7 +96,7 @@ function SubscribeToInsuranceCompany(props) {
             })}
           </Form.Control>
         </Form.Group>
-        <Button>Send request</Button>
+        <Button type="submit">Send request</Button>
       </Form>
     </div>
   );
