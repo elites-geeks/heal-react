@@ -9,50 +9,49 @@ function Footer() {
     return (
         <footer>
             <div className='uls'>
-            <ul>
-                <li>
-                    Terms and Conditions
-                </li>
-                <li>
-                    Privacy
-                </li>
-               
-            </ul>
-            <ul>
-                <li>
-                About us
-                </li>
-                <li>
-                Contact us <br />
-             
-                </li>
-                
-            </ul>
-           
-            <ul>
-               
-                <li>
-                    Pricing
-                </li>
-                <li>
-                    API
-                </li>
-            </ul><br />
+                <ul>
+                    <li>
+                        <a href="#">Terms and Conditions</a>
+                    </li>
+                    <li>
+                        <a href="#">Privacy</a>
+                    </li>
+
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact us</a>
+                    </li>
+
+                </ul>
+
+                <ul>
+
+                    <li>
+                    <a href="#"> Pricing</a>
+                    </li>
+                    <li>
+                    <a href="#">API</a>
+                    </li>
+                </ul><br />
             </div><br />
             <div class="icons">
-        <FacebookIcon/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="https://github.com/elites-geeks/heal-react">  <GitHubIcon/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                <LinkedInIcon/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <TwitterIcon/>
-                
+                <FacebookIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://github.com/elites-geeks/heal-react">  <GitHubIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <LinkedInIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <TwitterIcon />
+
             </div>
             <div className="copy">
 
-<img alt="logo" src={logo} />
-<p>
-    &copy;{new Date().getFullYear()} Heal Team
-</p>
-</div>
+                <img alt="logo" src={logo} />
+                <p>
+                    &copy;{new Date().getFullYear()} Heal Team
+                </p>
+            </div>
         </footer>
     )
 }

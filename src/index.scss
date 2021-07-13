@@ -24,3 +24,9 @@ body,
         url("./fonts/Engagement-Regular.ttf") format("truetype");
     font-weight: bold;
 }
+@font-face {
+    font-family: "logo";
+    src: local("FjallaOne-Regular"),
+        url("./fonts/FjallaOne-Regular.ttf") format("truetype");
+    font-weight: bold;
+}

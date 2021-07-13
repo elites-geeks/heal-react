@@ -8,7 +8,7 @@ import Head from '../../components/Head/Head'
 import AboutUs from '../../components/AboutUs/AboutUs'
 function Main() {
     return (
-        <div style={{ flexGrow: 1 }}>
+        <div className="main" style={{ flexGrow: 1 }}>
             <Dashboards />
             <Switch>
                 <Route exact path='/'>
