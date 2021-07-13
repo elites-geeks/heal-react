@@ -1,41 +1,88 @@
-footer{
-    background-color: #000;
-    display: flex !important;
+$main_color:#00cec8;
+
+footer {
+    background: linear-gradient(to top , $main-color,#00cec890,rgba(0, 206, 199, 0.4), #00cec830);
+    border-top-left-radius: 200px ;
+    
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 3rem;
-    .copy{
-        width: 20%;
+    height: fit-content;
+    padding-top: 5rem;
+    .copy {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        p{
+        margin-top: 15px;
+
+        p {
             font-size: smaller;
             color: #eee;
             margin: 0;
+            padding: 9px;
+            font-family: monospace;
+
+
         }
-        img{
+
+        img {
             width: 2rem;
             height: 2rem;
             border-radius: 50%;
-            border:2px solid tomato;
+            border: 2px solid tomato;
         }
     }
-    ul{
+
+    ul {
         list-style-type: none;
         width: 40%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-bottom: 0;
-        li{
-            cursor: pointer;
-            color: #fff;
-            &:hover{
-                color: tomato;
+        margin-bottom: 100px;
+        text-align: center;
+        padding: 5px;
+
+        li {
+            color: tomato;
+            padding: 7px;
+            a{
+                color: white;
+                &:hover {
+                    color: $main-color
+                }
             }
         }
     }
+
+    .uls {
+        width: 100%;
+        display: inline-flex;
+        height: 10rem;
+    }
+
+    .icons {
+        color: rgb(170, 68, 68);
+        width: 100%;
+        text-align: center;
+        .MuiSvgIcon-root {
+            text-decoration: none;
+            color: rgb(170, 68, 68);
+            cursor: pointer;
+            &:hover {
+                color: red;
+                text-decoration: none;
+            }
+        }
+        a{
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+}
+
+
+html{
+    width: 100vw  !important;
 }

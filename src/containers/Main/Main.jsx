@@ -5,6 +5,7 @@ import SignUp from '../../components/SignUp/SignUp'
 import SignIn from '../../components/signin/Signin'
 import Dashboards from '../dashboards/Dashboards'
 import Head from '../../components/Head/Head'
+import AboutUs from '../../components/AboutUs/AboutUs'
 function Main() {
     return (
         <div className="main" style={{ flexGrow: 1 }}>
@@ -18,6 +19,9 @@ function Main() {
                 </Route>
                 <Route path='/login'>
                     <SignIn />
+                </Route>
+                <Route path='/aboutus'>
+                    <AboutUs />
                 </Route>
             </Switch>
         </div>
