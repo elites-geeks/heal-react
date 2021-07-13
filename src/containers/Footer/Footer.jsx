@@ -8,37 +8,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 function Footer() {
     return (
         <footer>
-            <div className='uls'>
-                <ul>
-                    <li>
-                        <a href="#">Terms and Conditions</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy</a>
-                    </li>
-
-                </ul>
-                <ul>
-                    <li>
-                        <a href="#">About us</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact us</a>
-                    </li>
-
-                </ul>
-
-                <ul>
-
-                    <li>
-                    <a href="#"> Pricing</a>
-                    </li>
-                    <li>
-                    <a href="#">API</a>
-                    </li>
-                </ul><br />
-            </div><br />
-            <div class="icons">
+            <div className="icons">
                 <FacebookIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="https://github.com/elites-geeks/heal-react">  <GitHubIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 <LinkedInIcon />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -52,6 +22,37 @@ function Footer() {
                     &copy;{new Date().getFullYear()} Heal Team
                 </p>
             </div>
+            <div className='uls'>
+                <ul>
+                    <li>
+                        <button className="links" style={{ border:"none"}}>Terms and Conditions</button>
+                    </li>
+                    <li>
+                        <button className="links" style={{ border:"none"}}>Privacy</button>
+                    </li>
+
+                </ul>
+                <ul>
+                    <li>
+                        <button className="links" style={{ border:"none"}}>About us</button>
+                    </li>
+                    <li>
+                        <button className="links" style={{ border:"none"}}>Contact us</button>
+                    </li>
+
+                </ul>
+
+                <ul>
+
+                    <li>
+                        <button className="links" style={{ border:"none"}}> Pricing</button>
+                    </li>
+                    <li>
+                        <button className="links" style={{ border:"none"}}>API</button>
+                    </li>
+                </ul><br />
+            </div><br />
+
         </footer>
     )
 }

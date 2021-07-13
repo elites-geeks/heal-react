@@ -5,6 +5,9 @@
   height: 100vh;
   display: flex;
   justify-content: center;
+  // background:center no-repeat  url(./background.png);
+  background-size: cover;
+
 }
 
 .image-area {
@@ -12,7 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
+  background: linear-gradient(to top right , #00cec79d , rgba(255, 255, 255, 0.788),rgba(255, 255, 255, 0.438));
 }
 
 .img-wrapper {
@@ -35,7 +38,6 @@
   transform: skew(45deg);
   transition: 0.5s;
   overflow: hidden;
-  /* Hide scrollbars */
 }
 
 .img-wrapper:hover:before {

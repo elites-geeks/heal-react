@@ -12,12 +12,12 @@ function DoctorProfile() {
 
 	return (
 		<>
-			<div class="main-dev">
-				<div class="image-area">
-					<div class="logo2">
+			<div className="main-dev">
+				<div className="image-area">
+					<div className="logo2">
 						<h1>Elites<small>Team</small></h1>
 					</div>
-					<div class="img-wrapper">
+					<div className="img-wrapper">
 						<img src={areen} alt="Logo" />
 						<h2>Areen jaradat <small>Computer Engineer</small></h2>
 
@@ -28,7 +28,7 @@ function DoctorProfile() {
 							<li><a href="https://web.facebook.com/login.php?_rdc=1&_rdr"><FacebookIcon /></a></li>
 						</ul>
 					</div>
-					<div class="img-wrapper">
+					<div className="img-wrapper">
 						<img src={omar} alt="Logo" />
 						<h2>Omar ramadan <small>Software Developer</small></h2>
 						<ul>
@@ -38,7 +38,7 @@ function DoctorProfile() {
 							<li><a href="https://web.facebook.com/login.php?_rdc=1&_rdr"><FacebookIcon /></a></li>
 						</ul>
 					</div>
-					<div class="img-wrapper">
+					<div className="img-wrapper">
 						<img src={mohmmad} alt="Logo" />
 
 						<h2>mohammad al-khazali <small>Software Developer</small></h2>
