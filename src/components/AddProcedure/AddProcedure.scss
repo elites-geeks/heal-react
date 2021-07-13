@@ -1,9 +1,14 @@
 .procedureCards{
     // background-color: blueviolet;
     margin:50px;
-    width: 700px;
+    width: 60%;
     display: flex;
     flex-flow: row wrap;
-    justify-content:space-around;
+    justify-content:flex-start;
     
+}
+.cards{
+    margin:15px;
+   
+   ;
 }
