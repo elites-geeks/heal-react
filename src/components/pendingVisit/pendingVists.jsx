@@ -5,49 +5,54 @@ const pendingVisits = (props) => {
   return (
 
     <div className='subRequest-container'>
+      {/* ///// */}
+      <div className="cardsPending" style={{display:"inline-flex", marginTop:"7rem"}}>
+      <div>
        <Card style={{ width: '18rem',margin:'12px'}}>
         <Card.Body>
           <Card.Title>Pending...</Card.Title>
           <Card.Text>
-            Patient ID:
+            Patient ID:23
           </Card.Text>
           <Card.Text>
-          Patient Name:
+          Patient Name: mohammad
           </Card.Text>
           <Card.Text>
-            Doctor:
+            Doctor: areen
           </Card.Text>
           <Card.Text>
-            Diagnoses:
+            Diagnoses: nothing
           </Card.Text>
 
         </Card.Body>
-        <Button variant="success">Accepet</Button>
+        <Button variant="success" style={{width:"100%",borderRadius:"0px"}}>Accepet</Button>
   <Button variant="danger" >Rejects</Button>
       </Card>
+      </div>
+      {/* ///// */}
       <div>
       <Card style={{ width: '18rem',margin:'12px'}}>
         <Card.Body>
           <Card.Title>Pending...</Card.Title>
           <Card.Text>
-            Patient ID:
+            Patient ID: 24
           </Card.Text>
           <Card.Text>
-          Patient Name:
+          Patient Name: ali
           </Card.Text>
           <Card.Text>
-            Doctor:
+            Doctor: omar
           </Card.Text>
           <Card.Text>
-            Diagnoses:
+            Diagnoses: nothing
           </Card.Text>
 
         </Card.Body>
-  <Button variant="success">Accepet</Button>
+  <Button variant="success" style={{width:"100%",borderRadius:"0px"}}>Accepet</Button>
   <Button variant="danger">Rejects</Button>
       </Card>
       </div>
-     
+      </div>
     </div>
 
   );

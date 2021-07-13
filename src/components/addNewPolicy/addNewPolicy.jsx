@@ -6,25 +6,26 @@ const addNewPolicy = (props) => {
   return (
 
     <div>
+      <div className="form" style={{width:"60%",height:"25%", marginTop:"7rem",marginLeft:"11rem",padding:"1rem"}}>
       <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label style={{color:'white'}}>Offer Name</Form.Label>
+        <Form.Group controlId="formBasicEmail" style={{padding:"2px"}}>
+          <Form.Label style={{color:'#000'}}>Offer Name</Form.Label>
           <Form.Control type="text" />
 
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label style={{color:'white'}}>Offer covrage</Form.Label>
+          <Form.Label style={{color:'#000'}}>Offer covrage</Form.Label>
           <Form.Control type="text" />
 
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label style={{color:'white'}}>Offer cost per month</Form.Label>
+          <Form.Label style={{color:'#000'}}>Offer cost per month</Form.Label>
           <Form.Control type="text" />
 
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label style={{color:'white'}}>Offer Cost per Year</Form.Label>
+          <Form.Label style={{color:'#000'}}>Offer Cost per Year</Form.Label>
           <Form.Control type="text" />
         </Form.Group>
         <Form.Group controlId="formBasicCheckbox">
@@ -34,6 +35,8 @@ const addNewPolicy = (props) => {
           Add new
         </Button>
       </Form>
+      </div>
+      <div className="table" style={{width:"100%",marginRight:"5rem"}}>
       <Table  style={{ width: "30rem", marginLeft: "10rem" }}
           size="sm"
           variant="dark"
@@ -54,6 +57,7 @@ const addNewPolicy = (props) => {
     
   </tbody>
 </Table>
+</div>
       
     </div>
   );
