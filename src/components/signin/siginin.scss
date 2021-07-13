@@ -1,0 +1,44 @@
+.signCard .card {
+    width: 35% !important;
+    margin-top: 80px;
+    text-align: center;
+    background: rgb(255 253 253);
+}
+.signCard input, .signCard select {
+    background-color: #333;
+    color: #aaa;
+    height: 52px;
+    font-size: 1.5rem;
+    width: 89%;
+    text-align: center;
+}
+.card-title {
+    margin-bottom: 0.75rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+}
+.btn-success{
+    background: #00cec8;
+    height: 40px;
+    width: 158px;
+    border-radius: 28px;
+}
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 24px;
+}
+label {
+    display: inline-block;
+    margin-right: 15rem;
+    margin-bottom: 0.5rem;
+}
+.login{
+    position: relative;
+    width: 52px;
+    z-index: 1;
+    top: 103px;
+    border-radius: 30px;
+}

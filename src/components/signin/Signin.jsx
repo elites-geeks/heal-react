@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux'
 import { useState } from 'react';
 import { loginServer } from '../../actions/userActions'
 import { useHistory, useLocation } from 'react-router-dom';
+import "./siginin.scss";
+import Image from "../../assets/images/login.png"
+
 function SignIn() {
   let location = useLocation();
   let history = useHistory();
@@ -19,8 +22,10 @@ function SignIn() {
     }
   }
   return (
-    <div className="signCard" style={{ display: 'grid', placeItems: 'center', }}>
-      <Card style={{ width: "24rem", height: "fit-content", background: '#333', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
+    <div className="signCard" style={{ display: 'grid', placeItems: 'center',backgroundColor:"white" }}>
+   
+						<img src={Image} alt="Logo" class="login" />
+      <Card style={{ width: "24rem", height: "fit-content", background: '#fbfbfb', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
         <Card.Body>
           <Card.Title>Sign In</Card.Title>
           <Form onSubmit={e => {
@@ -39,8 +44,8 @@ function SignIn() {
                 <Form.Control onChange={e => setLoginInfo({ ...loginInfo, password: e.target.value })} value={loginInfo.password} required={true} type="password" placeholder="Password" />
               </Form.Group>
             </Form.Row>
-            <Button variant="success" type="submit">
-              Submit
+            <Button variant="success" type="submit" style={{height:"48px",width:"156px",borderRadius:"25px"}}>
+              Log In
             </Button>
           </Form>
         </Card.Body>
