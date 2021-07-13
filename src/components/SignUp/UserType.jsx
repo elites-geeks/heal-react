@@ -9,6 +9,7 @@ function UserType({ handleChange }) {
     
     return (
         <>
+        <h3>User Type</h3>
             <UserTypeSwitch changeType={setUserType} handleChange={handleChange} />
             <Switch>
                 <Case condition={userType === "client"}>

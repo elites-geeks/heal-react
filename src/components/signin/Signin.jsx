@@ -38,12 +38,12 @@ function SignIn() {
     
       <If condition={loading === true}>
         <Then>
-          <Loader />
+          <Loader message="Signing you in..." />
         </Then>
         <Else>
         <div className="signCard" style={{ display: 'grid', placeItems: 'center',backgroundColor:"white" }}>
    
-   <img src={Image} alt="Logo" class="login" />
+   <img src={Image} alt="Logo" className="login" />
    <Card style={{ width: "24rem", height: "fit-content", background: '#fbfbfb', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
    <Card.Body>
    <Card.Title>Sign In</Card.Title>
