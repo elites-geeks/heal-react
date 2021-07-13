@@ -89,7 +89,7 @@ $main_color:#00cec8;
                 padding: 0 1rem;
                 transition: ease 200ms;
                 margin: 0 20px;
-                border: 0.5px solid white;
+                border: 2px solid white;
                 &:hover {
                     background-color: #b4e69e;
                     border-bottom: 3px solid $main_color;
@@ -208,5 +208,10 @@ $main_color:#00cec8;
                 }
             }
         }
+    }
+}
+.dropdown{
+    button{
+        border-radius: 20px !important;
     }
 }
