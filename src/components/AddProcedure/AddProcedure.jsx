@@ -73,7 +73,7 @@ const AddProcedure = () => {
   function card(element, idx) {
     return (
   
-      <Card
+      <Card className="cards"
         key={idx}
         style={{ width: "15rem", boxShadow: "4px 3px 3px #9E9E9E" }}
       >

@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import VisitType from '../../components/VisitType/VisitType';
-import pendingProcedures from '../../components/pendingProcedures/pendingProcedures'
+import PendingProcedures from '../../components/pendingProcedures/pendingProcedures'
 import AppointmentsPatient from '../../components/AppointmentsPatient/AppointmentsPatient'
 import ClientProcedures from '../../components/ClientProcedures/ClientProcedures'
 import SubscribeToInsuranceCompany from '../../components/SubscribeToInsuranceCompany/SubscribeToInsuranceCompany'
@@ -18,7 +18,7 @@ function ClientSwitch() {
             </Route>
             <Route exact path={'/viewPendingProcedures'}>
             <div className="dashboard">
-                <pendingProcedures />
+                <PendingProcedures />
             </div>
             </Route>
             <Route exact path={'/client/appointment'}>
