@@ -1,0 +1,217 @@
+$main_color:#00cec8;
+
+.nav-bar {
+    width: 100%;
+    min-height: 15vh;
+    height: 15vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 20% 1fr;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: fit-content;
+        position: relative;
+        flex-wrap: wrap;
+        margin-left: 5rem;
+        margin-right: 3rem;
+        padding: 1rem;
+
+        a {
+            padding: 10px;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            width: fit-content;
+            height: 100px;
+
+            &:visited {
+                color: white;
+            }
+
+            h3 {
+                margin: 0;
+                text-decoration: none;
+                font-family: logo;
+                font-size: 2rem;
+                color: white;
+                margin-left: 10px;
+                text-shadow: 4px 0 $main_color;
+            }
+
+            img {
+                width: 70px;
+                padding: 5px;
+                height: 70px;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    padding-right: 2rem;
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-basis: 260px;
+        height: 15vh;
+        width: 100%;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+            .signup {
+                background-color: black;
+                &:hover {
+                    border-bottom: 3px solid black;
+                }
+            }
+
+            li {
+                background-color: $main_color;
+                border-radius: 20px;
+                padding: 0 10px;
+                display: grid;
+                place-items: center;
+                height: fit-content;
+                padding: 0 1rem;
+                transition: ease 200ms;
+                margin: 0 20px;
+                border: 2px solid white;
+                &:hover {
+                    background-color: #b4e69e;
+                    border-bottom: 3px solid $main_color;
+                    border-radius: 10px;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+                list-style: none;
+
+                a {
+                    height: 100%;
+                    font-family: 'MontserratAlternates-Light';
+                    text-decoration: none;
+                    color: white;
+                    font-size: larger;
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        width: 30px;
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+            width: 100%;
+            height: 0.1vh;
+            background-color: tomato;
+        }
+    }
+}
+
+#root {
+    min-height: 75vh;
+    height: fit-content;
+    position: relative;
+}
+
+#root>div {
+    height: fit-content !important;
+    position: relative; 
+}
+
+.main {
+
+    width: 100%;
+    min-height: 100vh;
+    height: fit-content !important;
+    position: relative;
+    
+    .head {
+        width: 100vw;
+        min-height: 100vh;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+
+        .head-img {
+            height: 100vh;
+            flex-basis: 435px;
+            flex-grow: 1;
+            background: right no-repeat url(../../assets//images/medical-5459630_1280.png);
+            background-size: cover;
+        }
+
+        .article {
+            flex-basis: 435px;
+            flex-grow: 1;
+            display: grid;
+            place-content: center;
+            align-content: center;
+            padding: 5rem 7rem;
+            padding-top: 10rem;
+            width: 50%;
+
+            h1 {
+                font-family: "RubikMonoOne-Regular";
+                font-size: 3rem;
+                background: -webkit-linear-gradient(rgb(255, 255, 255), $main_color, white);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            h2 {
+                font-family: "MontserratAlternates-Light";
+                color: rgb(134, 132, 132);
+                letter-spacing: 3px;
+            }
+
+            p {
+                color: #b4e69e;
+                font-size: 1.2rem;
+                letter-spacing: 2px;
+            }
+
+            button {
+                color: white;
+                margin: 2rem 0;
+                width: 50%;
+                height: 3rem;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                z-index: 100;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.39), $main-color, #00cec7bb, #00cec748);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.199);
+
+                &:hover {
+                    background: linear-gradient(to top, #00cec748, #00cec7bb, $main_color, rgba(0, 0, 0, 0.39));
+                }
+            }
+        }
+    }
+}
+.dropdown{
+    button{
+        border-radius: 20px !important;
+    }
+}

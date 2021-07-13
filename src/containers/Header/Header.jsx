@@ -1,10 +1,18 @@
 import React from 'react'
+import Nav from '../../components/Nav/Nav'
+import Logo from '../../components/Logo/Logo'
 import './Header.scss'
+
 function Header() {
+    
     return (
-        <div>
-            Hello from header
-        </div>
+        <>
+            <div className="nav-bar">
+                <Logo />
+                <Nav />
+            </div>
+
+        </>
     )
 }
 

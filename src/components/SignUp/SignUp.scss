@@ -1,0 +1,92 @@
+.register-container {
+   width: 100%;
+   display: grid;
+   grid-template-columns: 30% 1fr;
+   place-items: center;
+   margin-top: 10rem;
+   height: fit-content;
+   min-height: 70vh;
+   .register-form {
+      height: fit-content;
+      width: fit-content;
+      min-height: 100%;
+      width: 100%;
+      .card{
+         height: inherit;
+         width: 100%;
+         height:fit-content ;
+         min-height: 62vh;
+         .card-body{
+            height: fit-content;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            form{
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+               flex-grow: 1;
+               input[type="text"],input[type="password"], input[type="date"], input[type="email"],select{
+                  border-radius: 25px;
+               }
+            }
+         }
+      }
+   }
+   .register-personal{
+      background-image: url(../../assets/images/adult-4402808_1920.jpg);
+      width: 100% !important;
+   }
+   .register-contact{
+      background-image: url(../../assets/images/contactInfo.jpg);
+      width: 100% !important;
+   }
+   .register-user{
+      width: 100% !important;
+      background-image: url(../../assets/images/medical-5459661_1920.png);
+   }
+   .register-image{
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+   }
+}
+
+
+.formControl{
+   button{
+      border-radius: 50%;
+      height: 3rem;
+      width: 3rem;
+      border: 0;
+      background-color: rgba(0, 0, 0, 0.05);
+      color: black;
+      &:enabled:hover{
+         background-color: #00cec752;
+      }
+      &:disabled{
+         color: rgba(0, 0, 0, 0.171);
+      }
+
+   }
+   h6{
+      color: #83e659 ;
+      align-self: flex-end;
+   }
+}
+
+button[type="submit"]{
+   background: #00cec8;
+    height: 40px;
+    width: 158px;
+    border-radius: 28px;
+    border:none;
+    align-self: flex-end;
+    transition: ease 300ms;
+    &:hover{
+      color: #fff;
+      background-color: #b4e69e;
+    }
+    
+}
