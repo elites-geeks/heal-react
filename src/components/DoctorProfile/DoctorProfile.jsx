@@ -7,14 +7,7 @@ import { pushDoctorNotification } from "../../actions/userActions";
 import "./DoctorProfile.scss"
 import Visit from "../../assets/images/visit.jpg"
 import Appoint from "../../assets/images/appoint.png"
-// import cookie from "react-cookies";
 
-// const token = cookie.load('auth-token')
-// , {
-//   auth: {
-//     token
-//   }
-// }
 const newAppointNotification = io('https://elite-heal.herokuapp.com/newAppointNotification');
 
 

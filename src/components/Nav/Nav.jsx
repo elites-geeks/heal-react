@@ -34,7 +34,7 @@ function Nav() {
                         {isLoggedIn ? 'Dashboard' : "HOME"}
                     </Link>
                 </li>
-                {isLoggedIn ? (<div style={{ display: "flex", position: "relative"}}><BellIcon notifications={notifications} />
+                {isLoggedIn ? (<div style={{ display: "flex", position: "relative", marginRight:'2rem'}}><BellIcon notifications={notifications} />
                     <Navbar.Text style={{ display: "flex" }}>
                         <DropdownButton
                             style={{ width: "fit-content" }}
@@ -47,8 +47,23 @@ function Nav() {
                             <Dropdown.Divider />
                             <Dropdown.Item onClick={signOutHandler} eventKey="3">Sign out</Dropdown.Item>
                         </DropdownButton>
-                    </Navbar.Text></div>) : (<><li><Link to={'/login'}>{"LOGIN"}</Link></li>
-                        <li><Link to={'/aboutus'}>{"About Us"}</Link></li><li className="signup"><Link to={'/register'}>{"REGISTER"}</Link></li></>)}
+                    </Navbar.Text></div>) : (<>
+                        <li>
+                            <Link to={'/aboutus'}>
+                                {"About Us"}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to={'/login'}>
+                                {"LOGIN"}
+                            </Link>
+                        </li>
+                        <li className="signup">
+                            <Link to={'/register'}>
+                                {"REGISTER"}
+                            </Link>
+                        </li>
+                    </>)}
             </ul>
         </nav>
     )

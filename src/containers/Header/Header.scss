@@ -136,16 +136,16 @@ $main_color:#00cec8;
 
 #root>div {
     height: fit-content !important;
-    position: relative;
+    position: relative; 
 }
 
 .main {
 
     width: 100%;
     min-height: 100vh;
-    height: fit-content;
+    height: fit-content !important;
     position: relative;
-
+    
     .head {
         width: 100vw;
         min-height: 100vh;

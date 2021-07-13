@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 function EmployeeSignUP({ handleChange }) {
   return (
     <>
+    <h3>Employee Registration</h3>
       <Form.Group>
         <Form.Control
           name="img"

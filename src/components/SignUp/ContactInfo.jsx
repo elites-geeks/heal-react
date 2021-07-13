@@ -1,10 +1,13 @@
 import { Form } from "react-bootstrap";
 
-function ClientSignUp({ handleChange }) {
+function ClientSignUp({ handleChange, formBody }) {
     return (
         <>
+        <h3>Contact Information</h3>
             <Form.Group>
                 <Form.Control
+                    required
+                    isInvalid={!formBody.email}
                     type="email"
                     name="email"
                     placeholder="Email"
@@ -13,7 +16,9 @@ function ClientSignUp({ handleChange }) {
             </Form.Group>
             <Form.Group>
                 <Form.Control
-                    type="number"
+                    required
+                    isInvalid={!formBody.phone_number}
+                    type="text"
                     name="phone_number"
                     placeholder="Phone Number"
                     onChange={handleChange}
@@ -21,6 +26,8 @@ function ClientSignUp({ handleChange }) {
             </Form.Group>
             <Form.Group>
                 <Form.Control
+                    isInvalid={!formBody.country}
+                    required
                     type="text"
                     name="country"
                     placeholder="Address"

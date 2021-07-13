@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 function DoctorSignUp({ handleChange }) {
   return (
     <>
-     
+     <h3>Doctor Registration</h3>
       <Form.Group>
         <Form.Control
           name="img"

@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import ClientProfile from '../../components/ClientProfile/ClientProfile';
 import DoctorProfile from '../../components/DoctorProfile/DoctorProfile';
 import InsuranceDashboard from '../../components/insurance/dashboard';
@@ -15,33 +15,33 @@ import InsuranceSwitch from '../InsuranceSwitch/InsuranceSwitch'
 import EmployeeSwitch from "../EmployeeSwitch/EmployeeSwitch";
 
 function Dashboards() {
-    const {isLoggedIn , user} = useSelector(state=>state.userReducer);
+    const { isLoggedIn, user } = useSelector(state => state.userReducer);
     return (<>
 
         <DoctorSwitch />
-        <ClientSwitch/>
-        <AccountantSwitch/>
-        <InsuranceSwitch/>
-        <EmployeeSwitch/>
+        <ClientSwitch />
+        <AccountantSwitch />
+        <InsuranceSwitch />
+        <EmployeeSwitch />
         <Switch>
-            <ProtectedRoute exact path='/dashboard/client' isAuth={isLoggedIn&&user.role==='client'}>
+            <ProtectedRoute exact path='/dashboard/client' isAuth={isLoggedIn && user.role === 'client'}>
                 <ClientProfile />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/dashboard/doctor' isAuth={isLoggedIn&&user.role==='doctor'}>
+            <ProtectedRoute exact path='/dashboard/doctor' isAuth={isLoggedIn && user.role === 'doctor'}>
                 <DoctorProfile />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/dashboard/account' isAuth={isLoggedIn&&user.role==='account'}>
+            <ProtectedRoute exact path='/dashboard/account' isAuth={isLoggedIn && user.role === 'account'}>
                 <AccountantProfile />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/dashboard/insurance' isAuth={isLoggedIn&&user.role==='insurance'}>
+            <ProtectedRoute exact path='/dashboard/insurance' isAuth={isLoggedIn && user.role === 'insurance'}>
                 <InsuranceDashboard />
             </ProtectedRoute>
-            <ProtectedRoute exact path='/dashboard/employee' isAuth={isLoggedIn&&user.role==='employee'}>
+            <ProtectedRoute exact path='/dashboard/employee' isAuth={isLoggedIn && user.role === 'employee'}>
                 <EmployeeProfile />
             </ProtectedRoute>
 
         </Switch>
-        </>)
+    </>)
 }
 
 export default Dashboards;

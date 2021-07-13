@@ -28,13 +28,13 @@ export const signIn = async (username, password) => {
 export const signUp = async (data) => {
   switch (data.type) {
     case 'client':
-      data = { ...data, role: 'user', type: 'patient' }
+      data = { ...data, role: 'user', type: 'patient', date_of_birth: data.date_of_birth.slice(0, 10) }
       break;
     case 'doctor':
-      data = { ...data, role: 'user', type: 'doctor' }
+      data = { ...data, role: 'user', type: 'doctor', date_of_birth: data.date_of_birth.slice(0, 10) }
       break;
     case 'employee':
-      data = { ...data, role: 'user', type: 'employee' }
+      data = { ...data, role: 'user', type: 'employee', date_of_birth: data.date_of_birth.slice(0, 10) }
       break;
     default:
       data = { ...data }
@@ -92,9 +92,9 @@ export const searchForDoctor = async (search) => {
 export const reserveAppointment = async (appointment) => {
   let time = moment(appointment.time).format("HH:00");
   let date = moment(appointment.date).format("YYYY-MM-DD");
-  let patientId = appointment.patientId; 
+  let patientId = appointment.patientId;
   try {
-    const reservation = await axios.post(`${baseURL}/patient/appointment/search/${appointment.docId}`, {patientId, time, date }, {
+    const reservation = await axios.post(`${baseURL}/patient/appointment/search/${appointment.docId}`, { patientId, time, date }, {
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": baseURL,
