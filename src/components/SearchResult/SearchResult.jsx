@@ -38,9 +38,7 @@ const SearchResult = (props) => {
                       style={{ marginLeft: "10rem" }}
                       variant="primary"
                       onClick={async () => {
-                        console.log(user)
                         const reservation = await reserveAppointment({ docId: element._id, patientId: user.parentId, time: location.state.time, date: location.state.date })
-                        console.log(reservation)
                         newAppointNotification.emit('new-appointment', reservation)
                       }}
                     >

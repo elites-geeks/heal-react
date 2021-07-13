@@ -38,13 +38,11 @@ function SignUp() {
                     setLoading(true);
                     e.preventDefault();
                     const user = await signUp(formBody);
-                    console.log(user);
                     if (user?.userProfile?.info?.role) {
                       setLoading(false);
                       history.push(`/dashboard/${user.userProfile.info.role}`);
                     } else {
                       setLoading(false);
-                      console.log("Error when sign up");
                     }
                     history.replace({ ...from, pathname: from.pathname === "/" ? `/login` : from.pathname });
                   }}

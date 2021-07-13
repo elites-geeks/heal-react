@@ -30,7 +30,6 @@ function SignIn() {
       });
       setLoading(false)
     } else {
-      console.log("error logged in");
       setLoading(false)
     }
   };
