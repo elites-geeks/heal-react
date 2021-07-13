@@ -2,7 +2,7 @@ import { Link, Switch, Route } from "react-router-dom";
 import { Button,Card } from "react-bootstrap";
 import Policy from "../../assets/images/policy.jpg"
 import Subsic from "../../assets/images/subsic.png"
-import Pending from "../../assets/images/pending.jpg"
+import Pend from "../../assets/images/pend.jpg"
 const InsuranceDashboard = (props) => {
   return (
     <Switch>
@@ -13,9 +13,9 @@ const InsuranceDashboard = (props) => {
           <div className="cardsInsu" style={{display:"inline-flex"}}>
             <div style={{margin:"15px"}}>
           <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={Subsic} />
+  <Card.Img variant="top" src={Subsic} style={{height:"12rem"}} />
   <Card.Body>
-    <Card.Title>Card Title</Card.Title>
+    <Card.Title>subscription Request</Card.Title>
     <Card.Text>
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
@@ -29,9 +29,9 @@ const InsuranceDashboard = (props) => {
 {/* //////////// */}
 <div  style={{margin:"15px"}}>
 <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={Pending} style={{height:"12rem"}} />
+  <Card.Img variant="top" src={Pend} style={{height:"12rem"}} />
   <Card.Body>
-    <Card.Title>Card Title</Card.Title>
+    <Card.Title>Pending Visits</Card.Title>
     <Card.Text>
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
@@ -48,7 +48,7 @@ const InsuranceDashboard = (props) => {
 <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={Policy} />
   <Card.Body>
-    <Card.Title>Card Title</Card.Title>
+    <Card.Title>New Policy</Card.Title>
     <Card.Text>
       Some quick example text to build on the card title and make up the bulk of
       the card's content.
