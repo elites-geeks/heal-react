@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
+
+import { Button,Card,Form } from "react-bootstrap";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
@@ -48,6 +48,9 @@ function SubscribeToInsuranceCompany(props) {
 
   return (
     <div>
+       <Card style={{ width: "24rem", height: "fit-content", background: '#fbfbfb', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
+   <Card.Body>
+   <Card.Title>Subscribe To Insurance Company</Card.Title>
       <Form
         onSubmit={handleSubmit}
       >
@@ -96,9 +99,12 @@ function SubscribeToInsuranceCompany(props) {
             })}
           </Form.Control>
         </Form.Group>
-        <Button type="submit">Send request</Button>
+        <Button variant="success" type="submit" style={{height:"48px",width:"156px",borderRadius:"25px",background: "#00cec8"}}>Send request</Button>
       </Form>
+      </Card.Body>
+   </Card>
     </div>
+
   );
 }
 
