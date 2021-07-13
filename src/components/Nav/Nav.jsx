@@ -17,7 +17,8 @@ function Nav() {
                         {isLoggedIn?'Dashboard': "HOME"}
                     </Link>
                 </li>
-                {isLoggedIn? null : (<><li><Link to={'/register'}>{"REGISTER"}</Link></li><li><Link to={'/login'}>{"LOGIN"}</Link></li></>)}
+                {isLoggedIn? null : (<><li><Link to={'/login'}>{"LOGIN"}</Link></li>
+                <li className="signup"><Link  to={'/register'}>{"REGISTER"}</Link></li></>)}
             </ul>
         </nav>
     )
