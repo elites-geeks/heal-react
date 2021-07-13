@@ -17,34 +17,34 @@ function ClientSwitch() {
                 </div>
             </Route>
             <Route exact path={'/viewPendingProcedures'}>
-            <div className="dashboard">
-                <PendingProcedures />
-            </div>
+                <div className="dashboard">
+                    <PendingProcedures />
+                </div>
             </Route>
             <Route exact path={'/client/appointment'}>
-            <div className="dashboard">
-                <AppointmentsPatient />
-            </div>
+                <div className="dashboard">
+                    <AppointmentsPatient />
+                </div>
             </Route>
             <Route exact path={'/client/procedures/:id'}>
-            <div className="dashboard">
-                <ClientProcedures />
-            </div>
+                <div className="dashboard">
+                    <ClientProcedures />
+                </div>
             </Route>
             <Route exact path={'/Subscribe'}>
-            <div className="dashboard">
-                <SubscribeToInsuranceCompany />
-            </div>
+                <div className="dashboard">
+                    <SubscribeToInsuranceCompany />
+                </div>
             </Route>
             <Route exact path={'/Doctor/visit'}>
-            <div className="dashboard">
-                <MakeDoctorVisit />
-            </div>
+                <div className="dashboard">
+                    <MakeDoctorVisit />
+                </div>
             </Route>
             <Route exact path={'/dashboard/client/searchresult'}>
-            <div className="dashboard">
-                < SearchResult/>
-            </div>
+                <div className="dashboard">
+                    <SearchResult />
+                </div>
             </Route>
         </Switch>
     )

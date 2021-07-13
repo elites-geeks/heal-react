@@ -1,10 +1,48 @@
 @import "~bootstrap/scss/bootstrap";
 
-.dashboard{
+.dashboard {
     width: 100%;
-    height: fit-content;
+    height: fit-content !important;
     min-height: 75vh;
     display: grid;
+    padding-top: 9rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    padding-bottom: 5rem;
     place-items: center;
-    background-color:white;
+    h1{
+        margin-bottom: 3rem;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 60vh;
+        gap: 2rem;
+        .card {
+            height: 50vh;
+            width: 28vw;
+            img {
+                height: 70%;
+            }
+            .card-body {
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                a {
+                    height: fit-content;
+                    width: fit-content;
+                    button {
+                        background: #00cec8;
+                        border-radius: 28px;
+                        border: none;
+                        height: 2.5rem;
+                        &:hover {
+                            color: #fff;
+                            background-color: #b4e69e;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

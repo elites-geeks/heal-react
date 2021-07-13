@@ -37,7 +37,7 @@ function Nav() {
                 {isLoggedIn ? (<div style={{ display: "flex", position: "relative", marginRight:'2rem'}}><BellIcon notifications={notifications} />
                     <Navbar.Text style={{ display: "flex" }}>
                         <DropdownButton
-                            style={{ width: "fit-content" }}
+                            style={{ width: "fit-content"}}
                             variant="secondary"
                             size="sm"
                             title={<><PersonCircle /> {user.user?.username.toUpperCase()}</>}

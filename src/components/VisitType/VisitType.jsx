@@ -9,44 +9,32 @@ import doctorVisit from '../../assets/images/openVisit.png'
 function VisitType() {
   return (
     <>
-      <div className="dashboard">
-<h1 style={{ marginTop: "8rem" }}>Visit Type</h1>
-<div className="cards">
-  <div >
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={doctorVisit} />
-      <Card.Body>
-        <Card.Title>Doctor visit</Card.Title>
+      <h1>Visit Type</h1>
+      <div className="cards">
+        <Card>
+          <Card.Img variant="top" src={doctorVisit} />
+          <Card.Body>
+            <Card.Title>Doctor visit</Card.Title>
+            <Link to={"/Doctor/visit"}>
+              <Button>Open Doctor Visit</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Img
+            variant="top"
+            src={test}
+          />
+          <Card.Body>
+            <Card.Title>SelfVisit</Card.Title>
 
-        <Link to={"/Doctor/visit"}>
-          <Button>Visit</Button>
-        </Link>
-      </Card.Body>
-    </Card>
-  </div>
-
-  <div style={{ marginLeft: "15px" }}>
-    <Card style={{ width: "18rem" }}>
-      <Card.Img
-        variant="top"
-        src={test}
-        style={{ height: "11.9rem" }}
-      />
-      <Card.Body>
-        <Card.Title>SelfVisit</Card.Title>
-
-        <Link to={"/dashboard/doctor/add/procedure"}>
-          <Button>Visit</Button>
-        </Link>
-      </Card.Body>
-    </Card>
-  </div>
-
-
-</div>
-</div>
+            <Link to={"/dashboard/doctor/add/procedure"}>
+              <Button>Open Self Visit</Button>
+            </Link>
+          </Card.Body>
+        </Card>
+      </div>
     </>
-
   );
 }
 

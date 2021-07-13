@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 
-import { Button,Card,Form } from "react-bootstrap";
+import { Button, Card, Form } from "react-bootstrap";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
@@ -48,61 +48,61 @@ function SubscribeToInsuranceCompany(props) {
 
   return (
     <div>
-       <Card style={{ width: "24rem", height: "fit-content", background: '#fbfbfb', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
-   <Card.Body>
-   <Card.Title>Subscribe To Insurance Company</Card.Title>
-      <Form
-        onSubmit={handleSubmit}
-      >
-        <Form.Group>
-          <Form.Control
-            name="insurance"
-            value={formBody.insurance}
-            as="select"
-            onChange={(e) => {
-              setFormBody({ insurance: "none", patientId: user.parentId })
-              const insComp = insuranceCompanies.filter(
-                (element) => element.profile.name === e.target.value
-              )
-              setlistOfpolicies(insComp[0].listOfPolicies)
-              setFormBody({ ...formBody, insurance: e.target.value, insuranceComp: insComp[0]._id });
-            }}
+      <Card style={{ width: "24rem", height: "fit-content", background: '#fbfbfb', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
+        <Card.Body>
+          <Card.Title>Subscribe To Insurance Company</Card.Title>
+          <Form
+            onSubmit={handleSubmit}
           >
-            <option value="none" disabled={true}>
-              Insurance Companies
-            </option>
-            {insuranceCompanies.map((element, idx) => {
-              return (
-                <option key={idx} value={element.profile.name}>
-                  {element.profile.name}
+            <Form.Group>
+              <Form.Control
+                name="insurance"
+                value={formBody.insurance}
+                as="select"
+                onChange={(e) => {
+                  setFormBody({ insurance: "none", patientId: user.parentId })
+                  const insComp = insuranceCompanies.filter(
+                    (element) => element.profile.name === e.target.value
+                  )
+                  setlistOfpolicies(insComp[0].listOfPolicies)
+                  setFormBody({ ...formBody, insurance: e.target.value, insuranceComp: insComp[0]._id });
+                }}
+              >
+                <option value="none" disabled={true}>
+                  Insurance Companies
                 </option>
-              );
-            })}
-          </Form.Control>
-          <Form.Control
-            name="policy"
-            as="select"
-            onChange={(e) => {
-              const policy = listOfpolicies.filter(elem => elem.name === e.target.value)
-              setFormBody({ ...formBody, policy: policy[0] });
-            }}
-          >
-            <option disabled>
-              Policies available
-            </option>
-            {listOfpolicies.map((element, idx) => {
-              return (
-                <option key={idx} value={element.listOfPolicies.offerName}>
-                  {element.listOfPolicies.offerName}
+                {insuranceCompanies.map((element, idx) => {
+                  return (
+                    <option key={idx} value={element.profile.name}>
+                      {element.profile.name}
+                    </option>
+                  );
+                })}
+              </Form.Control>
+              <Form.Control
+                name="policy"
+                as="select"
+                onChange={(e) => {
+                  const policy = listOfpolicies.filter(elem => elem.name === e.target.value)
+                  setFormBody({ ...formBody, policy: policy[0] });
+                }}
+              >
+                <option disabled>
+                  Policies available
                 </option>
-              );
-            })}
-          </Form.Control>
-        </Form.Group>
-        <Button variant="success" type="submit" style={{height:"48px",width:"156px",borderRadius:"25px",background: "#00cec8"}}>Send request</Button>
-      </Form>
-      </Card.Body>
-   </Card>
+                {listOfpolicies.map((element, idx) => {
+                  return (
+                    <option key={idx} value={element.listOfPolicies.offerName}>
+                      {element.listOfPolicies.offerName}
+                    </option>
+                  );
+                })}
+              </Form.Control>
+            </Form.Group>
+            <Button variant="success" type="submit" style={{ height: "48px", width: "156px", borderRadius: "25px", background: "#00cec8" }}>Send request</Button>
+          </Form>
+        </Card.Body>
+      </Card>
     </div>
 
   );
