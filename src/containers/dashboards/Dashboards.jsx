@@ -25,19 +25,29 @@ function Dashboards() {
         <EmployeeSwitch />
         <Switch>
             <ProtectedRoute exact path='/dashboard/client' isAuth={isLoggedIn && user.role === 'client'}>
-                <ClientProfile />
+                <div className="dashboard">
+                    <ClientProfile />
+                </div>
             </ProtectedRoute>
             <ProtectedRoute exact path='/dashboard/doctor' isAuth={isLoggedIn && user.role === 'doctor'}>
-                <DoctorProfile />
+                <div className="dashboard">
+                    <DoctorProfile />
+                </div>
             </ProtectedRoute>
             <ProtectedRoute exact path='/dashboard/account' isAuth={isLoggedIn && user.role === 'account'}>
-                <AccountantProfile />
+                <div className="dashboard">
+                    <AccountantProfile />
+                </div>
             </ProtectedRoute>
             <ProtectedRoute exact path='/dashboard/insurance' isAuth={isLoggedIn && user.role === 'insurance'}>
-                <InsuranceDashboard />
+                <div className="dashboard">
+                    <InsuranceDashboard />
+                </div>
             </ProtectedRoute>
             <ProtectedRoute exact path='/dashboard/employee' isAuth={isLoggedIn && user.role === 'employee'}>
+            <div className="dashboard">
                 <EmployeeProfile />
+            </div>
             </ProtectedRoute>
 
         </Switch>

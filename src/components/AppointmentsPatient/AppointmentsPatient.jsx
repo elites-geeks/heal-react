@@ -36,13 +36,7 @@ const Appointments = () => {
           ) : (
             appointments.map((appoint) => {
               return (
-                <Card
-                  style={{
-                    width: "20rem",
-                    height: "fit-content",
-                    padding: "10px",
-                  }}
-                >
+                <Card>
                   <Card.Body>
                   <Card.Header>Appointment</Card.Header>
                     <p>date : {appoint.elem.date}</p>

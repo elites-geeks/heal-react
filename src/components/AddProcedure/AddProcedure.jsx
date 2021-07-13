@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Tabs, Tab, Card, Button, Table } from "react-bootstrap";
 import { Switch, Route } from "react-router-dom";
 import './AddProcedure.scss'
@@ -68,14 +68,17 @@ const AddProcedure = () => {
       return procedure.type === activeKey;
     });
 
-    return procedures.map(card);
+    return (
+      // <div className="procedures-dashboard">
+        <>{procedures.map(card)}</>
+      // </div>
+    );
   }
   function card(element, idx) {
     return (
-  
+
       <Card className="cards"
         key={idx}
-        style={{ width: "15rem", boxShadow: "4px 3px 3px #9E9E9E" }}
       >
         <Card.Body>
           <Card.Header>{element.name}</Card.Header>
@@ -83,9 +86,7 @@ const AddProcedure = () => {
           <Card.Text>expected : {element.expected}</Card.Text>
           <Card.Text>price : {element.price}</Card.Text>
 
-          <Button
-            style={{ marginLeft: "10rem" }}
-            variant="primary"
+          <Button className="clientBtn"
             onClick={(e) => {
               e.preventDefault();
               setorderdOfprocedures([...orderdOfprocedures, element]);
@@ -101,14 +102,15 @@ const AddProcedure = () => {
           </Button>
         </Card.Body>
       </Card>
-      
+
     );
   }
 
   return (
     <Switch>
       <Route path="/dashboard/doctor/add/procedure">
-       <h1>Add procedure</h1>
+      <div id="procedures">
+        <h1>Add procedure</h1>
         <Tabs
           activeKey={activeTab}
           transition={false}
@@ -116,21 +118,20 @@ const AddProcedure = () => {
           onSelect={(k) => setActiveTab(k)}
         >
           <Tab eventKey="lab" title="LAB">
-            <div className="procedureCards">{renderActive(activeTab)}</div>
+            {renderActive(activeTab)}
           </Tab>
           <Tab eventKey="radio" title="Radiology">
-            <div className="procedureCards">{renderActive(activeTab)}</div>
+            {renderActive(activeTab)}
           </Tab>
           <Tab eventKey="drug" title="pharmacy">
-            <div className="procedureCards">{renderActive(activeTab)}</div>
+            {renderActive(activeTab)}
           </Tab>
           <Tab eventKey="therapy" title="therapy">
-            <div className="procedureCards">{renderActive(activeTab)}</div>
+            {renderActive(activeTab)}
           </Tab>
         </Tabs>
 
         <Table
-          style={{ width: "50rem", marginLeft: "18rem" }}
           size="sm"
           variant="dark"
           responsive
@@ -156,7 +157,7 @@ const AddProcedure = () => {
                   <td>{procedure.nepartment}</td>
                   <td>{procedure.price}</td>
                   <td>
-                    <Button
+                    <Button className="clientBtn"
                       onClick={(e) => {
                         e.preventDefault();
                         setorderdOfprocedures(
@@ -174,6 +175,7 @@ const AddProcedure = () => {
             })}
           </tbody>
         </Table>
+        </div>
       </Route>
     </Switch>
   );
