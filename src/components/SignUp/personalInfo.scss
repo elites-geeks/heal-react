@@ -1,8 +1,8 @@
-.insurance  {
+.gender  {
     display: none;
 }
 
-.insurance +label {
+.gender +label {
     z-index: 10;
     margin: 0 10px 10px 0;
     position: relative;
@@ -15,12 +15,12 @@
     transition: all 200ms ease;
 }
 
-.insurance:checked+label {
+.gender:checked+label {
     color: #495057;
     background-color: #ced4da;
 }
 
-.insurance+label {
+.gender+label {
     padding: 5px 20px;
     border-radius: 10px;
 }

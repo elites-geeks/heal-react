@@ -1,76 +1,52 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import { Switch, Case, Default } from "react-if";
+import React, { useState } from 'react'
+import PersonalInfo from './PersonalInfo'
+import ContactInfo from './ContactInfo'
+import UserType from './UserType';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import PublishIcon from '@material-ui/icons/Publish';
 import Card from "react-bootstrap/Card";
-
-import UserType from "../UserType/UserType";
-
-import ClientSignUp from "../ClientSignUp/ClientSignUp";
-import DoctorSignUp from "../DoctorSignUp/DoctorSignUp";
-import EmployeeSignUP from "../EmployeeSignUP/EmployeeSignUP";
-import "./SignUp.scss";
 import { Form } from "react-bootstrap";
 import { signUp } from "../../reducers/utils";
 import { useHistory } from "react-router-dom";
 
-
 function SignUp() {
-  const [userType, setUserType] = useState('');
+  const [pageNum, setPageNum] = useState(0);
   const [formBody, setFormBody] = useState({});
-  useEffect(() => {
-    setUserType(formBody.type)
-  }, [formBody])
+  const history = useHistory();
   const handleChange = (e) => {
     setFormBody({ ...formBody, [e.target.name]: e.target.value });
   };
-  const history = useHistory();
+  const pages = [<PersonalInfo handleChange={handleChange} />, <ContactInfo handleChange={handleChange} />, <UserType handleChange={handleChange} />]
   return (
-    <>
-      <div className="signCard" style={{ display: 'grid', placeItems: 'center', height: 'fit-content' }}>
-        <Card style={{ width: "24rem", height: "fit-content", background: '#333', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
-          <Card.Body>
-            <Form
-            style={{paddingTop:"1rem"}}
-              onSubmit={(e) => {
-                e.preventDefault()
-                const user =signUp(formBody)
-                if(user?.userProfile?.info?.role){
-                  history.push(`/dashboard/${user.userProfile.info.role}`)
-                }else{
-                  console.log("Error when sign up") 
-                }
-              }}
-            >
-              <h2>Sign Up</h2>
-              <UserType  changeType={handleChange} />
-              <Switch>
-                <Case condition={userType === "client"}>
-                  <Card.Body>
-                    <ClientSignUp handleChange={handleChange} />
-                  </Card.Body>
-                </Case>
-                <Case condition={userType === "doctor"}>
-                  <Card.Body>
-                    <DoctorSignUp handleChange={handleChange} />
-                  </Card.Body>
-                </Case>
-                <Case condition={userType === "employee"}>
-                  <Card.Body>
-                    <EmployeeSignUP handleChange={handleChange} />
-                  </Card.Body>
-                </Case>
-                <Default>
-                  <Card.Body>
-                    Choose user type...
-                  </Card.Body>
-                </Default>
-              </Switch>
-            </Form>
-          </Card.Body>
-        </Card>
+    <div style={{ height: '100vh', width: "100vw", display: "grid", placeItems: "center", paddingTop: "10rem" }}>
+      <Card style={{ width: "24rem", height: "fit-content", background: '#333', color: '#aaa', borderColor: '#aaa', padding: "10px" }}>
+        <Card.Body>
+          <Form
+            style={{ paddingTop: "1rem" }}
+            onSubmit={(e) => {
+              e.preventDefault()
+              const user = signUp(formBody)
+              if (user?.userProfile?.info?.role) {
+                history.push(`/dashboard/${user.userProfile.info.role}`)
+              } else {
+                console.log("Error when sign up")
+              }
+            }}
+          >
+            <Card.Body>
+              {pages[pageNum]}
+            </Card.Body>
+            {pageNum === 2 ? <button type="submit"> <PublishIcon /> SUBMIT</button> : null}
+          </Form>
+        </Card.Body>
+      </Card>
+      <div>
+        <button onClick={() => setPageNum(pageNum - 1)} disabled={pageNum === 0 ? true : false}><ArrowBackIcon /></button>
+        <button disabled={pageNum === 2 ? true : false} type="button" onClick={() => setPageNum(pageNum + 1)}><ArrowForwardIcon /></button>
       </div>
-    </>
-  );
+    </div>
+  )
 }
 
 export default SignUp;

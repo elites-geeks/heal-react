@@ -1,12 +1,14 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-function UserType({changeType}) {
+function UserType({changeType, handleChange}) {
   
   return (
     <>
       <Form.Group style={{marginTop:"1rem"}} controlId="formGridState">
-        <Form.Control as="select" defaultValue="none" name="type" onChange={changeType}>
+        <Form.Control as="select" defaultValue="none" name="type" onChange={e => {
+          handleChange(e)
+          changeType(e.target.value)}}>
           <option value="none" disabled>
             select a user type
           </option>

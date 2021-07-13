@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
+// import { useHistory, useLocation } from 'react-router-dom';
 const pendingVisits = (props) => {
   return (
 

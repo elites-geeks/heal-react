@@ -1,24 +1,27 @@
 $main_color:#00cec8;
 
 footer {
-    background: linear-gradient(to top , $main-color,#00cec890,rgba(0, 206, 199, 0.4), #00cec830);
-    border-top-left-radius: 200px ;
-    
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(to top right, $main-color,#00cec7c7,rgba(255, 255, 255, 0.4), #fcfcfc30);
     height: fit-content;
     padding-top: 5rem;
+    width: 100vw;
+    align-items: center;
     .copy {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 15px;
-
+        background: rgba(255, 255, 255, 0.541);
+        width: fit-content;
+        border-radius: 20px;
+        padding: 0 5px;
         p {
             font-size: smaller;
-            color: #eee;
+            color: #555;
             margin: 0;
             padding: 9px;
             font-family: monospace;
@@ -27,27 +30,29 @@ footer {
         }
 
         img {
+            background: white;
             width: 2rem;
             height: 2rem;
             border-radius: 50%;
-            border: 2px solid tomato;
+            border: 2px solid $main_color;
         }
     }
 
     ul {
         list-style-type: none;
         width: 40%;
-        margin-bottom: 100px;
         text-align: center;
-        padding: 5px;
-
         li {
             color: tomato;
             padding: 7px;
-            a{
-                color: white;
+            .links{
+                background-color: transparent;
+                color: rgb(170, 68, 68);
                 &:hover {
-                    color: $main-color
+                    color: white;
+                    background: $main_color;
+                    border-radius: 5px;
+                    padding: 0 2px;
                 }
             }
         }
@@ -56,7 +61,7 @@ footer {
     .uls {
         width: 100%;
         display: inline-flex;
-        height: 10rem;
+        height: 5rem;
     }
 
     .icons {
@@ -73,16 +78,10 @@ footer {
             }
         }
         a{
-
             &:hover{
                 text-decoration: none;
             }
         }
     }
 
-}
-
-
-html{
-    width: 100vw  !important;
 }
