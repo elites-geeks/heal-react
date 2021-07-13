@@ -7,10 +7,8 @@ function DoctorVisitReceiption() {
   let location = useLocation();
   let history = useHistory();
   const [token, setToken] = useState([]);
-  console.log('token', token)
   let { from } = location.state || { from: { pathname: "/dashboard/doctor/newVisitDoctor" } };
   const submitHandler = async (tk) => {
-    console.log('tk', tk)
     history.replace({ ...from, pathname: from.pathname === "/dashboard/doctor/newVisitDoctor" ? `/dashboard/doctor/patientSub` : from.pathname });
   }
 

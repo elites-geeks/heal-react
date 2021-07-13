@@ -6,17 +6,13 @@ import axios from "axios";
 import Card from "react-bootstrap/Card";
 const baseURL = "https://elite-heal.herokuapp.com";
 
-const Appointments = (props) => {
+const Appointments = () => {
   const [appointments, setappointments] = useState([]);
   const userid = useSelector((state) => state.userReducer.user.parentId);
-  const user = useSelector((state) => state.userReducer.user);
-  console.log('user',user)
   useEffect(() => {
-    console.log('userid',userid)
-    console.log('inside use effect')
+
     fetchMyAPI();
     async function fetchMyAPI() {
-      console.log('fetchMyAPI')
       await axios({
         baseURL: baseURL,
         url: `/patient/appointment/${userid}`,
@@ -26,7 +22,6 @@ const Appointments = (props) => {
           "Access-Control-Allow-Origin": baseURL,
         }
       }).then(async (result) => {
-        console.log('result.data',result.data)
         setappointments([...result.data]);
       });
 

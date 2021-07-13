@@ -93,7 +93,6 @@ export const reserveAppointment = async (appointment) => {
   let time = moment(appointment.time).format("HH:00");
   let date = moment(appointment.date).format("YYYY-MM-DD");
   let patientId = appointment.patientId; 
-  console.log("appointment =====>>>>>>>>>>>",{patientId, time, date })
   try {
     const reservation = await axios.post(`${baseURL}/patient/appointment/search/${appointment.docId}`, {patientId, time, date }, {
       headers: {
@@ -106,17 +105,3 @@ export const reserveAppointment = async (appointment) => {
     console.log(err.message)
   }
 }
-
-
-// export const getInsuranceInfo= async () => {
-  
-//   await axios({
-//     baseURL: baseURL,
-//     url: `/insurance/insurance`,
-//     method: "get",
-//   }).then(async (result) => {
-//     console.log('result.data',result.data)
-//     return result.data
-//   });
-
-// }

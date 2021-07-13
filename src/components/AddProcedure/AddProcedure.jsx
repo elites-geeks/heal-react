@@ -55,7 +55,7 @@ let proce = [
   },
 ];
 
-console.log(proce);
+
 
 const AddProcedure = () => {
   const [activeTab, setActiveTab] = useState("lab");
@@ -70,9 +70,6 @@ const AddProcedure = () => {
 
     return procedures.map(card);
   }
-
-  console.log("orderdOfprocedures", orderdOfprocedures);
-
   function card(element, idx) {
     return (
   

@@ -20,7 +20,6 @@ function DoctorProfile() {
   useEffect(() => {
     newAppointNotification.on('new-appointment', payload => {
       dispatch(pushDoctorNotification(payload))
-      console.log(payload)
     })
   });
   return (
