@@ -25,7 +25,6 @@ function Nav() {
             unique.push(elem.savedApp._id)
         }
     }
-    console.log("Unique",unique)
     // const pages = [{ name: "HOME", path: `/` }, { name: 'REGISTER', path: 'register' }, { name: 'log in', path: 'login' }]
     let home = '/';
     home = isLoggedIn ? `/dashboard/${userType}` : '/';
