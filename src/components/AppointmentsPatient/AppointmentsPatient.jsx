@@ -10,7 +10,6 @@ const Appointments = () => {
   const [appointments, setappointments] = useState([]);
   const userid = useSelector((state) => state.userReducer.user.parentId);
   useEffect(() => {
-
     fetchMyAPI();
     async function fetchMyAPI() {
       await axios({
@@ -29,19 +28,21 @@ const Appointments = () => {
    
   }, [userid]);
   return (
-    <div>
+    <div className="cards">
       
           {!appointments.length ? (
             <h1>no available appointments</h1>
           ) : (
-            appointments.map((appoint) => {
+            appointments.map((appoint, idx) => {
               return (
-                <Card>
+                <Card key={idx}>
                   <Card.Body>
                   <Card.Header>Appointment</Card.Header>
-                    <p>date : {appoint.elem.date}</p>
-                    <p>time : {appoint.elem.time}</p>
-                    <p>name : {appoint.patient.userProfile.firstname} {appoint.patient.userProfile.lastname}</p>
+                    <p>Doctor : {appoint.doc.userProfile.firstname.toUpperCase()} {appoint.doc.userProfile.lastname.toUpperCase()}</p>
+                    <p>Date : {appoint.elem.date}</p>
+                    <p>Time : {appoint.elem.time}</p>
+                    <p>Phone Number : {appoint.elem.clinicPhoneNumber}</p>
+                    <p>Location : {appoint.doc.clinicLocation}</p>
                   </Card.Body>
                 </Card>
               );

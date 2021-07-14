@@ -34,7 +34,7 @@ function DoctorProfile() {
           </Card.Body>
         </Card>
         <Card >
-          <Card.Img variant="top" src={Appoint}/>
+          <Card.Img variant="top" src={Appoint} />
           <Card.Body>
             <Card.Title> Appointments</Card.Title>
             <Link to={'/dashboard/doctor/appointments'}>
@@ -44,7 +44,7 @@ function DoctorProfile() {
             </Link>
           </Card.Body>
         </Card>
-    </div>
+      </div>
     </>
   );
 }
