@@ -26,6 +26,17 @@ const AddNewPolicy = (props) => {
         "Access-Control-Allow-Origin": baseURL,
       },
     });
+    // try {
+    //   const data = await axios.post(`${baseURL}/insurance/policies`, { addPolicy }, {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       "Access-Control-Allow-Origin": baseURL,
+    //     }
+    //   });
+    //   console.log(data)
+    // } catch (err) {
+    //   console.log(err.message)
+    // }
     setLoading(false);
   }
 

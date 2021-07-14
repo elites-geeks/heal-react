@@ -14,7 +14,6 @@ const Appointments = () => {
 
   const userid = useSelector((state) => state.userReducer.user.parentId);
   useEffect(() => {
-   
     fetchMyAPI();
     async function fetchMyAPI() {
       await axios({
@@ -49,7 +48,7 @@ const Appointments = () => {
   } else {
     return (
       <div className="cards">
-        {!appointments.length ? (
+         {!sortedAppointments.length ? (
           <h1>no available appointments</h1>
         ) : (
           sortedAppointments.map((appoint, idx) => {

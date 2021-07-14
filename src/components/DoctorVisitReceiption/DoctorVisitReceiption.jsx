@@ -19,7 +19,6 @@ function DoctorVisitReceiption() {
           : from.pathname,
     });
   };
-  console.log(token);
   return (
     <>
       <h1>New Visit Reception</h1>
