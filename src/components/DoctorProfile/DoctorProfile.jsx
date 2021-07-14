@@ -10,11 +10,7 @@ import Appoint from "../../assets/images/appoint.png"
 import {docNotif} from '../../reducers/utils'
 import NotificationCard from "../NotificationCard/NotificationCard";
 
-import io from "socket.io-client";
-import { pushDoctorNotification } from "../../actions/userActions";
 import "./DoctorProfile.scss";
-import Visit from "../../assets/images/visit.jpg";
-import Appoint from "../../assets/images/appoint.png";
 
 const newAppointNotification = io(
   "https://elite-heal.herokuapp.com/newAppointNotification"
