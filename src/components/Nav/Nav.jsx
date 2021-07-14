@@ -17,7 +17,14 @@ function Nav() {
     const dispatch = useDispatch()
 
     const user = useSelector(state => state.userReducer)
+    
     const notifications = useSelector(state => state.doctorNotifications)
+    const unique = [];
+    for(let elem of notifications){
+        if(!unique.includes(elem.savedApp._id)){
+            unique.push(elem.savedApp._id)
+        }
+    }
     // const pages = [{ name: "HOME", path: `/` }, { name: 'REGISTER', path: 'register' }, { name: 'log in', path: 'login' }]
     let home = '/';
     home = isLoggedIn ? `/dashboard/${userType}` : '/';
@@ -34,7 +41,7 @@ function Nav() {
                         {isLoggedIn ? 'Dashboard' : "HOME"}
                     </Link>
                 </li>
-                {isLoggedIn ? (<div style={{ display: "flex", position: "relative", marginRight:'2rem'}}><BellIcon notifications={notifications} />
+                {isLoggedIn ? (<div style={{ display: "flex", position: "relative", marginRight:'2rem'}}><BellIcon notifications={unique} />
                     <Navbar.Text style={{ display: "flex" }}>
                         <DropdownButton
                             style={{ width: "fit-content"}}
@@ -50,7 +57,7 @@ function Nav() {
                     </Navbar.Text></div>) : (<>
                         <li>
                             <Link to={'/aboutus'}>
-                                {"About Us"}
+                                {"ABOUT US"}
                             </Link>
                         </li>
                         <li>

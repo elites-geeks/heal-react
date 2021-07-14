@@ -14,6 +14,19 @@
     .table{
         margin-top: 5rem;
     }
+    button {
+        background: #00cec8;
+        border-radius: 28px;
+        border: none;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            color: #fff;
+            background-color: #b4e69e;
+        }
+    }
 }
 .tab-pane.active{
     margin-top: 1rem;
