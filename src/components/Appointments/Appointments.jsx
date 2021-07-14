@@ -12,7 +12,6 @@ const Appointments = () => {
   const userid = useSelector((state) => state.userReducer.user.parentId);
   const [appointments, setappointments] = useState([]);
   useEffect(() => {
-   
     fetchMyAPI();
     async function fetchMyAPI() {
       await axios({
@@ -28,7 +27,6 @@ const Appointments = () => {
         setLoading(false)
       });
     }
-
   }, [userid]);
   const days = ["Sunday", "Monday", "Tuesday", 'Wednesday', "Thursday", "Friday", "Saturday"];
   const sortedAppointments = appointments.filter(elem => {
@@ -48,8 +46,7 @@ const Appointments = () => {
     return (
       <>
         <div className="cards">
-          {!appointments.length ? (<h1>no available appointments</h1>
-
+          {!sortedAppointments.length ? (<h1>no available appointments</h1>
           ) : (
             sortedAppointments.map((appoint, idx) => {
               return (
@@ -65,7 +62,6 @@ const Appointments = () => {
               );
             })
           )}
-
         </div>
       </>
     );
