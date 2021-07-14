@@ -1,68 +1,138 @@
-import { Button,Table} from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import React, { useState } from "react";
+import { Button, Card } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import axios from "axios";
+import { If, Then } from "react-if";
+import Loader from "../Loader/Loader";
 
-const addNewPolicy = (props) => {
+const baseURL = "https://elite-heal.herokuapp.com";
+
+const AddNewPolicy = (props) => {
+  const [addPolicy, setaddPolicy] = useState({});
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    console.log(addPolicy);
+
+    await axios({
+      baseURL: baseURL,
+      url: `/insurance/policies`,
+      method: "post",
+      data: JSON.stringify(addPolicy),
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": baseURL,
+      },
+    });
+    setLoading(false);
+  }
 
   return (
-
     <div>
-      <div className="form" style={{width:"60%",height:"25%", marginTop:"7rem",marginLeft:"11rem",padding:"1rem"}}>
-      <Form>
-        <Form.Group controlId="formBasicEmail" style={{padding:"2px"}}>
-          <Form.Label style={{color:'#000'}}>Offer Name</Form.Label>
-          <Form.Control type="text" />
+      <If condition={loading === true}>
+        <Then>
+          <Loader message="Saving the new policy..." />
+        </Then>
+      </If>
 
-        </Form.Group>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label style={{color:'#000'}}>Offer covrage</Form.Label>
-          <Form.Control type="text" />
+      <Card
+        style={{
+          height: "fit-content",
+          background: "#fbfbfb",
+          color: "#aaa",
+          borderColor: "#aaa",
+          padding: "60px",
+          position: "relative",
+        }}
+      >
+        <Card.Body>
+          <Card.Title>Add policy</Card.Title>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group style={{ padding: "2px" }}>
+              <Form.Control
+                placeholder="Offer Name"
+                required={true}
+                type="text"
+                name="offerName"
+                onChange={(e) =>
+                  setaddPolicy({
+                    ...addPolicy,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              ></Form.Control>
+            </Form.Group>
 
-        </Form.Group>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label style={{color:'#000'}}>Offer cost per month</Form.Label>
-          <Form.Control type="text" />
+            <Form.Group>
+              <Form.Control
+                placeholder="Offer covrage"
+                required={true}
+                name="offerCoverage"
+                type="text"
+                onChange={(e) =>
+                  setaddPolicy({
+                    ...addPolicy,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              ></Form.Control>
+            </Form.Group>
 
-        </Form.Group>
+            <Form.Group>
+              <Form.Control
+                placeholder="Offer cost per month"
+                required={true}
+                name="costPerMonth"
+                type="text"
+                onChange={(e) =>
+                  setaddPolicy({
+                    ...addPolicy,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              ></Form.Control>
+            </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label style={{color:'#000'}}>Offer Cost per Year</Form.Label>
-          <Form.Control type="text" />
-        </Form.Group>
-        <Form.Group controlId="formBasicCheckbox">
+            <Form.Group>
+              <Form.Control
+                placeholder="Offer Cost per Year"
+                required={true}
+                name="costPerYear"
+                type="text"
+                onChange={(e) =>
+                  setaddPolicy({
+                    ...addPolicy,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              ></Form.Control>
+            </Form.Group>
 
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Add new
-        </Button>
-      </Form>
-      </div>
-      <div className="table" style={{width:"100%",marginRight:"5rem"}}>
-      <Table  style={{ width: "30rem", marginLeft: "10rem" }}
-          size="sm"
-          variant="dark"
-          responsive
-          striped
-          bordered
-          hover>
-  <thead>
-    <tr>
-      
-      <th>Offer Name</th>
-      <th>Offer covrage</th>
-      <th>Offer cost per month</th>
-      <th>Offer cost per Year</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
-</Table>
-</div>
-      
+            <Form.Group>
+              <Form.Control
+                placeholder="company"
+                required={true}
+                name="company"
+                type="text"
+                onChange={(e) =>
+                  setaddPolicy({
+                    ...addPolicy,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              ></Form.Control>
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Add new
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
     </div>
   );
 };
 
-
-
-export default addNewPolicy;
+export default AddNewPolicy;

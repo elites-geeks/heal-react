@@ -12,6 +12,7 @@ const Appointments = () => {
   const userid = useSelector((state) => state.userReducer.user.parentId);
   const [appointments, setappointments] = useState([]);
   useEffect(() => {
+   
     fetchMyAPI();
     async function fetchMyAPI() {
       await axios({
@@ -21,7 +22,7 @@ const Appointments = () => {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": baseURL,
-        }
+        },
       }).then(async (result) => {
         setappointments([...result.data]);
         setLoading(false)

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
@@ -11,8 +10,11 @@ const Appointments = () => {
   const [loading, setLoading] = useState(true);
 
   const [appointments, setappointments] = useState([]);
+
+
   const userid = useSelector((state) => state.userReducer.user.parentId);
   useEffect(() => {
+   
     fetchMyAPI();
     async function fetchMyAPI() {
       await axios({
@@ -22,7 +24,7 @@ const Appointments = () => {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": baseURL,
-        }
+        },
       }).then(async (result) => {
         setappointments([...result.data]);
         setLoading(false)
