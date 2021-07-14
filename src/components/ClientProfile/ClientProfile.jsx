@@ -1,11 +1,8 @@
 import { Card, Button } from "react-bootstrap";
 import { Link, Switch, Route } from "react-router-dom";
-
 import './ClientProfile.scss'
-
 import Visit from "../../assets/images/visit.jpg";
 import Appoint from "../../assets/images/appoint.png";
-import procedure from "../../assets/images/procedure.jpg";
 import sub from "../../assets/images/sub22.jpg";
 import Pindingprocedure from "../../assets/images/pendingProcedure.jpg";
 function ClientProfile() {
@@ -19,7 +16,7 @@ function ClientProfile() {
               <Card>
                 <Card.Img variant="top" src={Visit} />
                 <Card.Body>
-                  <Card.Title> Visit Reception</Card.Title>
+                  <Card.Title>New Visit</Card.Title>
                   <Link to={"/makenewVisit"}>
                     <Button className="clientBtn">Open a new Visit</Button>
                   </Link>
