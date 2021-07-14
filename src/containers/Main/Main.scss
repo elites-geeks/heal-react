@@ -10,35 +10,44 @@
     padding-right: 7rem;
     padding-bottom: 5rem;
     place-items: center;
-    h1{
+    position: relative;
+    h1 {
         margin-bottom: 3rem;
     }
+
     .cards {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 60vh;
         gap: 2rem;
+
         .card {
             height: 50vh;
             width: 28vw;
-            &:hover{
+
+            &:hover {
                 box-shadow: 0 7px 10px rgba(0, 0, 0, 0.479);
             }
+
             img {
                 height: 70%;
             }
+
             .card-body {
                 height: fit-content;
                 display: flex;
                 flex-direction: column;
+
                 a {
                     height: fit-content;
                     width: fit-content;
+
                     button {
                         background: #00cec8;
                         border-radius: 28px;
                         border: none;
                         height: 2.5rem;
+
                         &:hover {
                             color: #fff;
                             background-color: #b4e69e;
@@ -47,5 +56,40 @@
                 }
             }
         }
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+
+    .badge {
+        border-radius: 20px;
+        color: white;
+        line-height: 1.2rem;
+    }
+
+    .Thursday {
+        background-color: blue;
+    }
+
+    .Monday {
+        background-color: orange;
+    }
+
+    .Tuesday {
+        background-color: cyan;
+    }
+
+    .Wednesday {
+        background-color: chartreuse;
+    }
+
+    .Saturday {
+        background-color: red;
+    }
+
+    .Sunday {
+        background-color: rgba(0, 0, 0, 0.507);
     }
 }

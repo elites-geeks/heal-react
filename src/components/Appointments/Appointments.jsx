@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useEffect } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
-
-
+import Loading from '../Loader/Loader'
 const baseURL = "https://elite-heal.herokuapp.com";
 
+
 const Appointments = () => {
-  const [appointments, setappointments] = useState([]);
-
-
-  console.log(appointments);
+  const [loading, setLoading] = useState(true);
   const userid = useSelector((state) => state.userReducer.user.parentId);
-  console.log(userid);
+  const [appointments, setappointments] = useState([]);
   useEffect(() => {
    
     fetchMyAPI();
@@ -28,51 +25,51 @@ const Appointments = () => {
         },
       }).then(async (result) => {
         setappointments([...result.data]);
+        setLoading(false)
       });
     }
-   
+
   }, [userid]);
-  return (
-    <>
- 
-      <div className="cards">
-        {!appointments.length ? (
-      
-          <h1>no available appointments</h1>
-        ) : (
-          appointments.map((appoint, idx) => {
-            return (
-              <Card
-                key={idx}
-                style={{
-                  width: "20rem",
-                  height: "fit-content",
-                  padding: "10px",
-                }}
-              >
-                <Card.Body>
-                  <Card.Header>Appointment</Card.Header>
-                  <p>Date : {appoint.elem.date}</p>
-                  <p>Time : {appoint.elem.time}</p>
-                  <p>
-                    Patient Name :{" "}
-                    {appoint.patient.userProfile.firstname.toUpperCase()}{" "}
-                    {appoint.patient.userProfile.lastname.toUpperCase()}
-                  </p>
-                  <p>
-                    Patient Phone Num :{" "}
-                    {appoint.patient.userProfile.info.phone_number}
-                  </p>
-                </Card.Body>
-              </Card>
-            );
-          })
-        )}
-      </div>
+  const days = ["Sunday", "Monday", "Tuesday", 'Wednesday', "Thursday", "Friday", "Saturday"];
+  const sortedAppointments = appointments.filter(elem => {
+    const day = new Date(elem.elem.date)
+    return day.getDay() !== 5;
+  });
+  sortedAppointments.sort(function (a, b) {
+    const dateA = a.elem.date + ":" + a.elem.time;
+    const dateB = b.elem.date + ":" + b.elem.time;
+    return new Date(dateA) - new Date(dateB);
+  });
+  if (loading) {
+    return (<>
+      <Loading message="Please Wait..." />
+    </>)
+  } else {
+    return (
+      <>
+        <div className="cards">
+          {!appointments.length ? (<h1>no available appointments</h1>
 
+          ) : (
+            sortedAppointments.map((appoint, idx) => {
+              return (
+                <Card key={idx}>
+                  <Card.Body>
+                    <Card.Header><span className="cardTitle">Appointment</span> <span className={`badge ${days[new Date(appoint.elem.date).getDay()]}`}>{days[new Date(appoint.elem.date).getDay()]}</span></Card.Header>
+                    <p style={{ marginTop: "2rem" }}>Date : {appoint.elem.date}</p>
+                    <p>Time : {appoint.elem.time}</p>
+                    <p>Patient Name : {appoint.patient.userProfile.firstname.toUpperCase()} {appoint.patient.userProfile.lastname.toUpperCase()}</p>
+                    <p>Patient Phone Num : {appoint.patient.userProfile.info.phone_number}</p>
+                  </Card.Body>
+                </Card>
+              );
+            })
+          )}
 
-    </>
-  );
+        </div>
+      </>
+    );
+  }
 };
 
 export default Appointments;

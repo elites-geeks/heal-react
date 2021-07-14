@@ -20,7 +20,7 @@ export default function FolderList({ notifications }) {
     const classes = useStyles();
     const genNotif = () => {
         notifications.map((elem, idx) => (
-            <ListItem>
+            <ListItem key={idx}>
                 <ListItemAvatar>
                     <Avatar>
                         <WorkIcon />
@@ -32,7 +32,7 @@ export default function FolderList({ notifications }) {
     }
     return (
         <List className={classes.root}>
-
+            {genNotif()}
         </List>
     );
 }

@@ -105,3 +105,13 @@ export const reserveAppointment = async (appointment) => {
     console.log(err.message)
   }
 }
+
+
+export const docNotif = (elem) => {
+  return ({
+    userImage: elem.patient.userProfile.img,
+    name: elem.patient.userProfile.firstname.toUpperCase() + " " + elem.patient.userProfile.lastname.toUpperCase(),
+    type: "New appointment reserved",
+    message: `${elem.patient.userProfile.firstname.toUpperCase()} reserved a new appointment to your clinic at ${elem.savedApp.time}, on ${elem.savedApp.date}`
+  })
+}
