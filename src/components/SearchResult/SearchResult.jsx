@@ -19,13 +19,12 @@ const SearchResult = (props) => {
   return (
     <Switch>
       <Route path="/dashboard/client/searchresult">
-        <div >
+        <div className="cards" >
           {
             location.state.docs.map((element, idx) => {
               return (
                 <Card
                   key={idx}
-                  style={{ width: "15rem", boxShadow: "4px 3px 3px #9E9E9E" }}
                 >
                   <Card.Body>
                     <Card.Header>Doctor: {element.userProfile.firstname.toUpperCase() + " " + element.userProfile.lastname.toUpperCase()}</Card.Header>
@@ -35,7 +34,6 @@ const SearchResult = (props) => {
 
 
                     <Button
-                      style={{ marginLeft: "10rem" }}
                       variant="primary"
                       onClick={async () => {
                         const reservation = await reserveAppointment({ docId: element._id, patientId: user.parentId, time: location.state.time, date: location.state.date })

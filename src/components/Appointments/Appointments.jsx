@@ -30,14 +30,15 @@ const Appointments = () => {
    
   }, [userid]);
   return (
-    <div>
+    <div className="cards">
       
           {!appointments.length ? (
             <h1>no available appointments</h1>
           ) : (
-            appointments.map((appoint) => {
+            appointments.map((appoint, idx) => {
               return (
                 <Card
+                key={idx}
                   style={{
                     width: "20rem",
                     height: "fit-content",
@@ -46,9 +47,10 @@ const Appointments = () => {
                 >
                   <Card.Body>
                   <Card.Header>Appointment</Card.Header>
-                    <p>date : {appoint.elem.date}</p>
-                    <p>time : {appoint.elem.time}</p>
-                    <p>name : {appoint.patient.userProfile.firstname} {appoint.patient.userProfile.lastname}</p>
+                    <p>Date : {appoint.elem.date}</p>
+                    <p>Time : {appoint.elem.time}</p>
+                    <p>Patient Name : {appoint.patient.userProfile.firstname.toUpperCase()} {appoint.patient.userProfile.lastname.toUpperCase()}</p>
+                    <p>Patient Phone Num : {appoint.patient.userProfile.info.phone_number}</p>
                   </Card.Body>
                 </Card>
               );

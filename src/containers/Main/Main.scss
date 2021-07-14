@@ -21,6 +21,9 @@
         .card {
             height: 50vh;
             width: 28vw;
+            &:hover{
+                box-shadow: 0 7px 10px rgba(0, 0, 0, 0.479);
+            }
             img {
                 height: 70%;
             }
