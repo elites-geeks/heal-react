@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import Card from "react-bootstrap/Card";
+
+
 const baseURL = "https://elite-heal.herokuapp.com";
 
 const Appointments = () => {
   const [appointments, setappointments] = useState([]);
+
+
   const userid = useSelector((state) => state.userReducer.user.parentId);
   useEffect(() => {
+   
     fetchMyAPI();
     async function fetchMyAPI() {
       await axios({
@@ -19,26 +23,29 @@ const Appointments = () => {
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": baseURL,
-        }
+        },
       }).then(async (result) => {
         setappointments([...result.data]);
       });
-
     }
-   
+    
   }, [userid]);
   return (
-    <div className="cards">
-      
+   
+        <div className="cards">
           {!appointments.length ? (
+           
             <h1>no available appointments</h1>
           ) : (
             appointments.map((appoint, idx) => {
               return (
                 <Card key={idx}>
                   <Card.Body>
-                  <Card.Header>Appointment</Card.Header>
-                    <p>Doctor : {appoint.doc.userProfile.firstname.toUpperCase()} {appoint.doc.userProfile.lastname.toUpperCase()}</p>
+                    <Card.Header>Appointment</Card.Header>
+                    <p>
+                      Doctor : {appoint.doc.userProfile.firstname.toUpperCase()}{" "}
+                      {appoint.doc.userProfile.lastname.toUpperCase()}
+                    </p>
                     <p>Date : {appoint.elem.date}</p>
                     <p>Time : {appoint.elem.time}</p>
                     <p>Phone Number : {appoint.elem.clinicPhoneNumber}</p>
@@ -48,8 +55,9 @@ const Appointments = () => {
               );
             })
           )}
-       
-    </div>
+        </div>
+        
+    
   );
 };
 
