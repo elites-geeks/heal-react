@@ -12,7 +12,7 @@ const InsuranceDashboard = (props) => {
           <Card>
             <Card.Img variant="top" src={Subsic} />
             <Card.Body>
-              <Card.Title>subscription Request</Card.Title>
+              <Card.Title>Insurance Subscription Request</Card.Title>
               <Link to="/subRequests">
                 <Button>New subscription Request</Button>
               </Link>

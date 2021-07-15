@@ -28,9 +28,9 @@ function ClientProfile() {
                   src={Pindingprocedure}
                 />
                 <Card.Body>
-                  <Card.Title> Pinding procedure</Card.Title>
+                  <Card.Title> Pending Procedures</Card.Title>
                   <Link to={"/viewPendingProcedures"}>
-                    <Button className="clientBtn">Pinding procedure</Button>
+                    <Button className="clientBtn">Pending Procedures</Button>
                   </Link>
                 </Card.Body>
               </Card>
@@ -53,7 +53,7 @@ function ClientProfile() {
                   src={sub}
                 />
                 <Card.Body>
-                  <Card.Title>Subscribe to insurance Company</Card.Title>
+                  <Card.Title>Subscribe to Insurance Company</Card.Title>
                   <Link to={"/Subscribe"}>
                     <Button className="clientBtn">Subscribe</Button>
                   </Link>

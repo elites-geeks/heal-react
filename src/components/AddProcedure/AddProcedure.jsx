@@ -6,52 +6,84 @@ import './AddProcedure.scss'
 let proce = [
   {
     type: "lab",
-    name: "lab",
-    notes: "adasd",
-    expected: "5min",
-    price: "5",
+    name: "CBC",
+    notes: "Blood sample",
+    expected: "20 mins",
+    price: "10 JDs",
     code: "1",
   },
 
   {
     type: "radio",
-    name: "radiology",
-    notes: "adasd",
-    expected: "5min",
-    price: "5",
+    name: "X-Ray",
+    notes: "Standing position",
+    expected: "15 mins",
+    price: "15 JDs",
     code: "2",
   },
   {
+    type: "radio",
+    name: "CT Scan",
+    notes: "Heart with coloring materials",
+    expected: "120 mins",
+    price: "120 JDs",
+    code: "163",
+  },
+  {
+    type: "radio",
+    name: "MRI Image",
+    notes: "Abdomen on the Kidneys",
+    expected: "40 mins",
+    price: "80 JDs",
+    code: "156",
+  },
+  {
     type: "drug",
-    name: "pharmacy",
-    notes: "adasd",
-    expected: "5min",
-    price: "5",
+    name: "Panadol",
+    notes: "3 times a day after meal",
+    expected: "1 week",
+    price: "3 JDs",
     code: "3",
+  },
+  {
+    type: "drug",
+    name: "Reavnin",
+    notes: "2 times a day after meal",
+    expected: "1.5 week",
+    price: "2 JDs",
+    code: "20",
   },
 
   {
     type: "therapy",
-    name: "therapy",
-    notes: "adasd",
-    expected: "5min",
-    price: "5",
+    name: "Massage",
+    notes: "Back and Shoulders",
+    expected: "1 hour",
+    price: "15 JDs",
+    code: "500",
+  },
+  {
+    type: "therapy",
+    name: "Joins Therapy",
+    notes: "Knee and elbow",
+    expected: "1 hour",
+    price: "30 JDs",
     code: "4",
   },
   {
     type: "lab",
-    name: "lab",
-    notes: "adasd",
-    expected: "5min",
-    price: "5",
+    name: "Blood Sugar",
+    notes: "Fasting",
+    expected: "30 mins",
+    price: "3 JDs",
     code: "5",
   },
   {
     type: "lab",
-    name: "lab",
-    notes: "adasd",
-    expected: "5min",
-    price: "5",
+    name: "Kidney Functions",
+    notes: "After Dialysis",
+    expected: "1 hour",
+    price: "35 JDs",
     code: "6",
   },
 ];
@@ -70,9 +102,7 @@ const AddProcedure = () => {
     });
 
     return (
-      // <div className="procedures-dashboard">
       <>{procedures.map(card)}</>
-      // </div>
     );
   }
   function card(element, idx) {
@@ -85,8 +115,8 @@ const AddProcedure = () => {
         <Card.Body style={{ height: "fit-content" }}>
           <Card.Header>{element.name}</Card.Header>
           <Card.Text>Notes : {element.notes}</Card.Text>
-          <Card.Text>expected : {element.expected}</Card.Text>
-          <Card.Text>price : {element.price}</Card.Text>
+          <Card.Text>Expected Time: {element.expected}</Card.Text>
+          <Card.Text>Price : {element.price}</Card.Text>
 
           <Button className="clientBtn"
             onClick={(e) => {
@@ -143,11 +173,11 @@ const AddProcedure = () => {
           >
             <thead>
               <tr>
-                <th>name</th>
+                <th>Name</th>
                 <th>Notes</th>
                 <th>Department Name</th>
-                <th>price</th>
-                <th>delete</th>
+                <th>Price</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>

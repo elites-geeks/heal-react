@@ -14,7 +14,7 @@ function VisitType() {
         <Card>
           <Card.Img variant="top" src={doctorVisit} />
           <Card.Body>
-            <Card.Title>Doctor visit</Card.Title>
+            <Card.Title>Doctor Visit</Card.Title>
             <Link to={"/Doctor/visit"}>
               <Button>Open Doctor Visit</Button>
             </Link>
@@ -26,7 +26,7 @@ function VisitType() {
             src={test}
           />
           <Card.Body>
-            <Card.Title>SelfVisit</Card.Title>
+            <Card.Title>Self Visit</Card.Title>
 
             <Link to={"/dashboard/doctor/add/procedure"}>
               <Button>Open Self Visit</Button>
