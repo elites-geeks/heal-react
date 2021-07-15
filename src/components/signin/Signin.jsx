@@ -61,7 +61,7 @@ function SignIn() {
                   <Form.Row>
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label>Password</Form.Label>
-                      <Form.Control onChange={e => setLoginInfo({ ...loginInfo, password: e.target.value })} value={loginInfo.password} required={true} type="password" placeholder="Password" />
+                      <Form.Control onChange={e => setLoginInfo({ ...loginInfo, password: e.target.value })} value={loginInfo.password} required={true} type="password" placeholder="password" />
                     </Form.Group>
                   </Form.Row>
                   <Button variant="success" type="submit" style={{ height: "48px", width: "156px", borderRadius: "25px" }}>

@@ -46,6 +46,7 @@ const Appointments = () => {
       <Loading message="Please Wait..." />
     </>)
   } else {
+    console.log(sortedAppointments)
     return (
       <div className="cards">
          {!sortedAppointments.length ? (
@@ -59,7 +60,7 @@ const Appointments = () => {
                   <p style={{ marginTop: "2rem" }}>Doctor : {appoint.doc.userProfile.firstname.toUpperCase()} {appoint.doc.userProfile.lastname.toUpperCase()}</p>
                   <p>Date : {appoint.elem.date}</p>
                   <p>Time : {appoint.elem.time}</p>
-                  <p>Phone Number : {appoint.elem.clinicPhoneNumber}</p>
+                  <p>Phone Number : {appoint.doc.clinicPhoneNumber}</p>
                   <p>Location : {appoint.doc.clinicLocation}</p>
                 </Card.Body>
               </Card>

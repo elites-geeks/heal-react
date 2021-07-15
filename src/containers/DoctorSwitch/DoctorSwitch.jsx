@@ -21,9 +21,7 @@ function DoctorSwitch() {
                 </div>
             </Route>
             <Route exact path={'/dashboard/doctor/patientSub'}>
-                <div className="dashboard">
                     <PatientSub />
-                </div>
             </Route>
             <Route exact path={'/dashboard/doctor/diagnosis'}>
                 <div className="dashboard">

@@ -43,7 +43,7 @@ function DoctorSignUp({ handleChange }) {
 
       <Form.Group>
         <Form.Control
-        name="yearsOfExp"
+        name="Years of Experience"
           onChange={handleChange}
           type="number"
           placeholder="YearsOfExp"
