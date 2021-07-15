@@ -18,13 +18,13 @@ function AccountantProfile() {
               <Card.Img variant="top" src={Recption}/>
               <Card.Body>
                 <Card.Title>New Visit Reception</Card.Title>
-                <Link to='/new/AccountantVisitReceiption'><Button >new Visit Reception</Button></Link>
+                <Link to='/new/AccountantVisitReceiption'><Button >New isit eception</Button></Link>
               </Card.Body>
             </Card>
             <Card>
               <Card.Img variant="top" src={Exported} />
               <Card.Body>
-                <Card.Title>Invoices exported</Card.Title>
+                <Card.Title>Invoices Exported</Card.Title>
                 <Link to='/InvoicesExported'><Button >Invoices exported</Button></Link>
               </Card.Body>
             </Card>
